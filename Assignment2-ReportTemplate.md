@@ -5,7 +5,7 @@
 | Group \#:      |     |
 | -------------- | --- |
 | Student Names: |     |
-|                |     |
+| Rachel Renegado|     |
 |                |     |
 | Abhay Khosla   |     |
 
