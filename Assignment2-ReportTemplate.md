@@ -6,8 +6,9 @@
 | -------------- | --- |
 | Student Names: |     |
 | Rachel Renegado|     |
-|                |     |
+| Lauraine Baffot|     |
 | Abhay Khosla   |     |
+|                |     |
 
 # 1 Introduction
 
