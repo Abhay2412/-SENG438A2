@@ -114,6 +114,96 @@ public class RangeTest {
 				1, tempRange3.getLowerBound(), .000000001d);//This is the assert statement which takes 
         //in the expected, the actual value and the eplison for the standard deviation. 
 	}
+	
+	//begin tests written by Alexis
+	/**
+	 * This test will be used to test what happens when the first parameter entered is null. The second value
+	 * (the other range) should be returned.
+	 */
+	@Test
+	public void combineFirstParameterNullUpperBound() {
+		Range tempRange = Range.combine(null, new Range(4, 8)); //combine our null range with a given range of (4, 8)
+		double upperBound = tempRange.getUpperBound(); //get our new upper bound for the combined range
+		assertEquals("The combined upper bound should be 8.0 and it is " + upperBound, 8.0, upperBound, .000000001d); //see if the expected value matches the actual value
+	}
+	
+	/**
+	 * This test will be used to test what happens when the first parameter entered is null. The second value
+	 * (the other range) should be returned.
+	 */
+	@Test
+	public void combineFirstParameterNullLowerBound() {
+		Range tempRange = Range.combine(null, new Range(4, 8)); //combine our null range with a given range of (4, 8)
+		double lowerBound = tempRange.getLowerBound(); //get our new lower bound for the combined range
+		assertEquals("The combined lower bound should be 4.0 and it is " + lowerBound, 4.0, lowerBound, .000000001d); //see if the expected value matches the actual value
+	}
+	
+	/**
+	 * This test will be used to test what happens when the second parameter entered is null. The first value
+	 * (the other range) should be returned.
+	 */
+	@Test
+	public void combineSecondParameterNullUpperBound() {
+		Range tempRange = Range.combine(null, new Range(-8, -2)); //combine our null range with a given range of (-8, -2)
+		double upperBound = tempRange.getUpperBound(); //get our new upper bound for the combined range
+		assertEquals("The combined upper bound should be -2.0 and it is " + upperBound, -2.0, upperBound, .000000001d); //see if the expected value matches the actual value
+	}
+	
+	/**
+	 * This test will be used to test what happens when the second parameter entered is null. The first value
+	 * (the other range) should be returned.
+	 */
+	@Test
+	public void combineSecondParameterNullLowerBound() {
+		Range tempRange = Range.combine(null, new Range(-8, -2)); //combine our null range with a given range of (-8, -2)
+		double lowerBound = tempRange.getLowerBound(); //get our new lower bound for the combined range
+		assertEquals("The combined lower bound should be -8.0 and it is " + lowerBound, -8.0, lowerBound, .000000001d); //see if the expected value matches the actual value
+	}
+	
+	
+	/**
+	 * This test will be used to test what happens when both parameters are null. The return value should be null and thus throw a null pointer exception
+	 */
+	@Test(expected = NullPointerException.class)
+	public void combineBothParametersNullUpperBound() {
+		Range tempRange = Range.combine(null, null); //combine our null range with a given range of (null, null)
+		double upperBound = tempRange.getUpperBound(); //get our new upper bound for the combined range
+		assertNull("The combined upper bound should be null", upperBound); //see if the object is null or not
+	}
+	
+	/**
+	 * This test will be used to test what happens when both parameters are null. The return value should be null and thus throw a null pointer exception
+	 */
+	@Test(expected = NullPointerException.class)
+	public void combineBothParametersNullLowerBound() {
+		Range tempRange = Range.combine(null, null); //combine our null range with a given range of (null, null)
+		double lowerBound = tempRange.getLowerBound(); //get our new lower bound for the combined range
+		assertNull("The combined lower bound should be null", lowerBound); //see if the object is null or not
+	}
+	
+	/**
+	 * This test will be used to test what happens when no parameters are null. A new range should be created from the combination of the two
+	 * input ranges.
+	 */
+	@Test
+	public void combineNoParametersNullUpperBound() {
+		Range tempRange = Range.combine(new Range(1, 10), new Range(-8, -2)); //combine two ranges of (1, 10) and (-8, -2)
+		double upperBound = tempRange.getUpperBound(); //get our new upper bound for the combined range
+		assertEquals("The combined upper bound should be 10.0 and it is " + upperBound, 10.0, upperBound, .000000001d); //see if the expected value matches the actual value
+	}
+	
+	/**
+	 * This test will be used to test what happens when no parameters are null. A new range should be created from the combination of the two
+	 * input ranges.
+	 */
+	@Test
+	public void combineNoParametersNullLowerBound() {
+		Range tempRange = Range.combine(new Range(1, 10), new Range(-8, -2)); //combine two ranges of (1, 10) and (-8, -2)
+		double lowerBound = tempRange.getLowerBound(); //get our new lower bound for the combined range
+		assertEquals("The combined lower bound should be -8.0 and it is " + lowerBound, -8.0, lowerBound, .000000001d); //see if the expected value matches the actual value
+	}
+	
+	//end tests written by Alexis
     
     @After
     public void tearDown() throws Exception {
