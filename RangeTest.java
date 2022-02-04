@@ -204,6 +204,56 @@ public class RangeTest {
 	}
 	
 	//end tests written by Alexis
+	
+	// ---------ADDED BY LAURAINE-------------      
+    @Test
+    public void shiftByPositiveDoubleUpperBound()
+    {
+    	testRange1 = new Range(2, 6);
+    	testShiftedRange = Range.shift(testRange1, 158.3);
+    	assertEquals("The shifted value should be ", 164.3, testShiftedRange.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void shiftByPositiveDoubleLowerBound()
+    {
+    	testRange1 = new Range(2, 6);
+    	testShiftedRange = Range.shift(testRange1, 2.2);
+    	assertEquals("The shifted value should be ", 4.2, testShiftedRange.getLowerBound(), .000000001d);
+    }
+    
+    @Test
+    public void shiftByNegativeDoubleUpperBound()
+    {
+    	testRange1 = new Range(2, 6);
+    	testShiftedRange = Range.shift(testRange1, -2.2);
+    	assertEquals("The shifted value should be ", 3.8, testShiftedRange.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void shiftByNegativeDoubleLowerBound()
+    {
+    	testRange1 = new Range(2, 6);
+    	testShiftedRange = Range.shift(testRange1, -1.2);
+    	assertEquals("The shifted value should be ", 0.8, testShiftedRange.getLowerBound(), .000000001d);
+    }
+    
+    @Test
+    public void shiftByNegativeDoubleToGetNegativeValueUpperBound()
+    {
+    	testRange1 = new Range(2, 6);
+    	testShiftedRange = Range.shift(testRange1, -6.8);
+    	assertEquals("The value for the lower bound is incorrect.", -0.8, testShiftedRange.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void shiftByNegativeDoubleToGetNegativeValueLowerBound()
+    {
+    	testRange1 = new Range(2, 6);
+    	testShiftedRange = Range.shift(testRange1, -2.2);
+    	assertEquals("The value for the lower bound is incorrect.", -0.2, testShiftedRange.getLowerBound(), .000000001d);
+    }
+    // ---------ADDED BY LAURAINE-------------
     
     @After
     public void tearDown() throws Exception {
