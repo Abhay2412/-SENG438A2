@@ -203,6 +203,72 @@ public class RangeTest {
 		assertEquals("The combined lower bound should be -8.0 and it is " + lowerBound, -8.0, lowerBound, .000000001d); //see if the expected value matches the actual value
 	}
 	
+	/**
+	 * This test will be used to test the length of a range when it should be zero.
+	 */
+	@Test
+	public void testGetLengthZero()
+	{
+		Range tempRange = new Range(1, 1); //create a new Range object
+		double length = tempRange.getLength(); //calculate the length of the range
+		assertEquals("The length should be 0.0 and it is " + length, 0.0, length, .000000001d); //see if the expected value matches the actual value
+	}
+	
+	/**
+	 * This test will be used to test the length of an extremely large positive range
+	 */
+	@Test
+	public void testGetLengthLargePositive()
+	{
+		Range tempRange = new Range(2, 200000000); //create a new Range object
+		double length = tempRange.getLength(); //calculate the length of the range
+		assertEquals("The length should be 199,999,998 and it is " + length, 199999998.0, length, .000000001d); //see if the expected value matches the actual value
+	}
+	
+	/**
+	 * This test will be used to test the length of an extremely large negative range
+	 */
+	@Test
+	public void testGetLengthLargeNegative()
+	{
+		Range tempRange = new Range(-200000000, -2); //create a new Range object
+		double length = tempRange.getLength(); //calculate the length of the range
+		assertEquals("The length should be 199,999,998 and it is " + length, 199999998.0, length, .000000001d); //see if the expected value matches the actual value
+	}
+	
+	/**
+	 * This test will be used to test the length of a range composed of two double numbers
+	 */
+	@Test
+	public void testGetLengthRangeIsDouble()
+	{
+		Range tempRange = new Range(-200.03, 200.50); //create a new Range object
+		double length = tempRange.getLength(); //calculate the length of the range
+		assertEquals("The length should be 400.53 and it is " + length, 400.53, length, .000000001d); //see if the expected value matches the actual value
+	}
+	
+	/**
+	 * This test will be used to test the length of a range composed of integers
+	 */
+	@Test
+	public void testGetLengthRangeIsInt()
+	{
+		Range tempRange = new Range(-30, 35); //create a new Range object
+		double length = tempRange.getLength(); //calculate the length of the range
+		assertEquals("The length should be 65 and it is " + length, 65, length, .000000001d); //see if the expected value matches the actual value
+	}
+	
+	/**
+	 * This test will be used to test the length of a range composed of a double and an integer
+	 */
+	@Test
+	public void testGetLengthRangeDoubleAndInt()
+	{
+		Range tempRange = new Range(-200.03, 200); //create a new Range object
+		double length = tempRange.getLength(); //calculate the length of the range
+		assertEquals("The length should be 400.03 and it is " + length, 400.03, length, .000000001d); //see if the expected value matches the actual value
+	}
+	
 	//end tests written by Alexis
 	
 	// ---------ADDED BY LAURAINE-------------      
