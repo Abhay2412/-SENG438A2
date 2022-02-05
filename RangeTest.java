@@ -95,7 +95,7 @@ public class RangeTest {
 	
 	/**
 	 * This test will simulate expanding the range by -0.24 and -0.50 - asserting that
-	 * the upper margin will be expanded to be 12.
+	 * the upper margin will be shrink to be 4.
 	 */
 	@Test
 	public void expandTestUpperMarginLessOne() {// This is created the see if the range will change or not.
