@@ -1,6 +1,7 @@
 package org.jfree.data.test;
 
 import static org.junit.Assert.*;
+
 import org.jfree.data.Range;
 import org.junit.*;
 
@@ -91,6 +92,7 @@ public class RangeTest {
 		assertEquals("The lower margin range will be 0.68", 0.68, testExpandRange.getLowerBound(), .000000001d);
 		// assertion that expected value matches the actual value (0.68)
 	}
+	
 
 	/**
 	 * This test will simulate expanding the range by 0.33 and 0.44 - asserting that
@@ -105,6 +107,24 @@ public class RangeTest {
 		// range and the margin values
 		assertEquals("The upper margin range will be 7.76", 7.76, testExpandRange.getUpperBound(), .000000001d);
 		// assertion that expected value matches the actual value (7.76)
+	}
+	
+	/**
+	 * This test will simulate that if we pass in an expansion of zero in the parameters
+	 * there should be an exception thrown. 
+	 */
+	@Test
+	public void expandTestWithZero() {// This is created the see if the range will change or not.
+		// Using the margin value in percentages which are all 0.
+		try {
+			testRange1 = new Range(2, 6); // This is creating the range for testing purposes.
+			testExpandRange = Range.expand(testRange1, 0, 0);// Using the expand method to pass in the test
+			assertEquals("The new range after the expansion of zero was different than orginal.", testRange1, testExpandRange);
+		}
+		catch(Exception e) {
+			fail("Expanding it by zero threw an exception");
+		}
+		//The assert checks for the exception which is being thrown. 
 	}
 
 	/* Rachel codes and Abhay Reviews */
@@ -175,7 +195,7 @@ public class RangeTest {
 
 	/**
 	 * This test will simulate expanding a range of 3 and 7 to include the value 1 -
-	 * asserting that the upper margin will remain the same to be 1.
+	 * asserting that the lower bound change to be 1.
 	 */
 	@Test
 	public void expandToInlcudeOutsideLowerRangeLower() {// This test is for testing the expanding the range
@@ -184,6 +204,19 @@ public class RangeTest {
 		Range tempRange = Range.expandToInclude(new Range(3, 7), 1);// This is creating the test range for this test.
 		assertEquals("The lower value will be 1", 1, tempRange.getLowerBound(), .000000001d);
 		// assertion that expected value matches the actual value (1)
+	}
+
+	/**
+	 * This test will simulate expanding a range of 3 and 7 to include the value -5 -
+	 * asserting that the lower value will change to be -5.
+	 */
+	@Test
+	public void expandToInlcudeOutsideLowerRangeLowerNeg() {// This test is for testing the expanding the range
+		// which will include -5 in the range and making sure the lower value bound
+		// reflects the updated range.
+		Range tempRange = Range.expandToInclude(new Range(3, 7), -5);// This is creating the test range for this test.
+		assertEquals("The lower value will be -5", -5, tempRange.getLowerBound(), .000000001d);
+		// assertion that expected value matches the actual value (-5)
 	}
 
 	/**
