@@ -15,15 +15,15 @@ public class RangeTest {
 	private Range exampleRange; // The example range which was given to us
 	private Range testRange1; // Created this range to test other functionalities of the test range.
 	private Range testExpandRange; // This is the expanded range in use for the expand method.
-
+		
+	// -----------------------------------------------------------------------------------------
+	// The following code was taken from the SENG438 Lab Document
+	// -----------------------------------------------------------------------------------------
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		// This calls the setUpBefore even the class exists and does nothing.
 	}
 
-	// -----------------------------------------------------------------------------------------
-	// The following code was taken from the SENG438 Lab Document
-	// -----------------------------------------------------------------------------------------
 	@Before
 	public void setUp() throws Exception {
 		// Before each test case this object of range is ready for us to use.
