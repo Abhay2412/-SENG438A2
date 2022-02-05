@@ -103,7 +103,7 @@ public class RangeTest {
 		// integer.
 		testRange1 = new Range(2, 6); // This is creating the range for testing purposes.
 		testExpandRange = Range.expand(testRange1, -0.24, -0.5);// Using the expand method to pass in the test
-		// range and the margin values which are less than 1. 
+		// range and the margin values which are less than 0. 
 		assertEquals("The upper margin range will be 4", 4, testExpandRange.getUpperBound(), .000000001d);
 		// assertion that expected value matches the actual value (4)
 	}
