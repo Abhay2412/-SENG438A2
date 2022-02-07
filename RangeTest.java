@@ -16,7 +16,7 @@ public class RangeTest {
 	private Range exampleRange; // The example range which was given to us
 	private Range testRange1; // Created this range to test other functionalities of the test range.
 	private Range testExpandRange; // This is the expanded range in use for the expand method.
-		
+
 	// -----------------------------------------------------------------------------------------
 	// The following code was taken from the SENG438 Lab Document
 	// -----------------------------------------------------------------------------------------
@@ -44,16 +44,18 @@ public class RangeTest {
 	// -----------------------------------------------------------------------------------------
 
 	// -----------------------------------------------------------------------------------------
-	// CODE CREATED BY ABHAY AND RACHEL
+	// Code written by Abhay and Rachel
 	// -----------------------------------------------------------------------------------------
-	/* Abhay codes and Rachel Reviews */
+	/* Abhay codes and Rachel reviews */
+
+	// ---- expand(Range range, double lowerMargin, double upperMargin) Tests ----
 
 	/**
 	 * This test will simulate expanding the range by 0.25 and 0.5 - asserting that
 	 * the lower margin will be expanded to be 1.
 	 */
 	@Test
-	public void expandTestLowerMarginInt() { // This is created the see if the range will change or not.
+	public void expandTestLowerMarginInt() {
 		// Using the margin value in percentages which will return the lower bound as an
 		// integer.
 		testRange1 = new Range(2, 6); // This is creating the range for testing purposes.
@@ -68,7 +70,7 @@ public class RangeTest {
 	 * the upper margin will be expanded to be 8.
 	 */
 	@Test
-	public void expandTestUpperMarginInt() {// This is created the see if the range will change or not.
+	public void expandTestUpperMarginInt() {
 		// Using the margin value in percentages which will return the upper bound as an
 		// integer.
 		testRange1 = new Range(2, 6); // This is creating the range for testing purposes.
@@ -77,33 +79,33 @@ public class RangeTest {
 		assertEquals("The upper margin range will be 8", 8, testExpandRange.getUpperBound(), .000000001d);
 		// assertion that expected value matches the actual value (8)
 	}
-	
+
 	/**
 	 * This test will simulate expanding the range by 1.25 and 1.5 - asserting that
 	 * the upper margin will be expanded to be 12.
 	 */
 	@Test
-	public void expandTestUpperMarginOverOne() {// This is created the see if the range will change or not.
+	public void expandTestUpperMarginOverOne() {
 		// Using the margin value in percentages which will return the upper bound as an
 		// integer.
 		testRange1 = new Range(2, 6); // This is creating the range for testing purposes.
 		testExpandRange = Range.expand(testRange1, 1.25, 1.5);// Using the expand method to pass in the test
-		// range and the margin values which are greater than 1. 
+		// range and the margin values which are greater than 1.
 		assertEquals("The upper margin range will be 12", 12, testExpandRange.getUpperBound(), .000000001d);
 		// assertion that expected value matches the actual value (12)
 	}
-	
+
 	/**
-	 * This test will simulate expanding the range by -0.24 and -0.50 - asserting that
-	 * the upper margin will be shrink to be 4.
+	 * This test will simulate expanding the range by -0.24 and -0.50 - asserting
+	 * that the upper margin will be shrink to be 4.
 	 */
 	@Test
-	public void expandTestUpperMarginLessOne() {// This is created the see if the range will change or not.
+	public void expandTestUpperMarginLessOne() {
 		// Using the margin value in percentages which will return the upper bound as an
 		// integer.
 		testRange1 = new Range(2, 6); // This is creating the range for testing purposes.
 		testExpandRange = Range.expand(testRange1, -0.24, -0.5);// Using the expand method to pass in the test
-		// range and the margin values which are less than 0. 
+		// range and the margin values which are less than 0.
 		assertEquals("The upper margin range will be 4", 4, testExpandRange.getUpperBound(), .000000001d);
 		// assertion that expected value matches the actual value (4)
 	}
@@ -113,7 +115,7 @@ public class RangeTest {
 	 * the lower margin will be expanded to be 0.68.
 	 */
 	@Test
-	public void expandTestLowerMarginDecimal() {// This is created the see if the range will change or not.
+	public void expandTestLowerMarginDecimal() {
 		// Using the margin value in percentages which will return the lower bound as a
 		// decimal.
 		testRange1 = new Range(2, 6); // This is creating the range for testing purposes.
@@ -122,14 +124,13 @@ public class RangeTest {
 		assertEquals("The lower margin range will be 0.68", 0.68, testExpandRange.getLowerBound(), .000000001d);
 		// assertion that expected value matches the actual value (0.68)
 	}
-	
 
 	/**
 	 * This test will simulate expanding the range by 0.33 and 0.44 - asserting that
 	 * the upper margin will be expanded to be 7.76.
 	 */
 	@Test
-	public void expandTestUpperMarginDecimal() {// This is created the see if the range will change or not.
+	public void expandTestUpperMarginDecimal() {
 		// Using the margin value in percentages which will return the upper bound as a
 		// decimal.
 		testRange1 = new Range(2, 6); // This is creating the range for testing purposes.
@@ -138,32 +139,35 @@ public class RangeTest {
 		assertEquals("The upper margin range will be 7.76", 7.76, testExpandRange.getUpperBound(), .000000001d);
 		// assertion that expected value matches the actual value (7.76)
 	}
-	
+
 	/**
-	 * This test will simulate that if we pass in an expansion of zero in the parameters
-	 * there should be an exception thrown. 
+	 * This test will simulate that if we pass in an expansion of zero in the
+	 * parameters there should be an exception thrown.
 	 */
 	@Test
-	public void expandTestWithZero() {// This is created the see if the range will change or not.
+	public void expandTestWithZero() {
 		// Using the margin value in percentages which are all 0.
 		try {
 			testRange1 = new Range(2, 6); // This is creating the range for testing purposes.
 			testExpandRange = Range.expand(testRange1, 0, 0);// Using the expand method to pass in the test
-			assertEquals("The new range after the expansion of zero was different than orginal.", testRange1, testExpandRange);
-		}
-		catch(Exception e) {
+			assertEquals("The new range after the expansion of zero was different than orginal.", testRange1,
+					testExpandRange);
+		} catch (Exception e) {
 			fail("Expanding it by zero threw an exception");
 		}
-		//The assert checks for the exception which is being thrown. 
+		// The assert checks for the exception which is being thrown.
 	}
 
-	/* Rachel codes and Abhay Reviews */
+	/* Rachel codes and Abhay reviews */
+
+	// ------- expandToInclude(Range range, double value) Tests -------
+
 	/**
 	 * This test will simulate expanding a range of 4 and 6 to include the value 5 -
 	 * asserting that the upper margin will remain the same and be 6.
 	 */
 	@Test
-	public void expandToInlcudeInsideRangeUpper() { // This test is for testing the expanding the range
+	public void expandToInlcudeInsideRangeUpper() {
 		// which will include 5 in the range and making sure the upper value bound is
 		// still the same.
 		Range tempRange = Range.expandToInclude(new Range(4, 6), 5); // This is creating the test range for this test.
@@ -176,7 +180,7 @@ public class RangeTest {
 	 * asserting that the lower margin will remain the same and be 4.
 	 */
 	@Test
-	public void expandToInlcudeInsideRangeLower() {// This test is for testing the expanding the range
+	public void expandToInlcudeInsideRangeLower() {
 		// which will include 5 in the range and making sure the lower value bound is
 		// still the same.
 		Range tempRange = Range.expandToInclude(new Range(4, 6), 5);// This is creating the test range for this test.
@@ -189,7 +193,7 @@ public class RangeTest {
 	 * asserting that the upper margin will expand to be 7.
 	 */
 	@Test
-	public void expandToInlcudeOutsideUpperRangeUpper() { // This test is for testing the expanding the range
+	public void expandToInlcudeOutsideUpperRangeUpper() {
 		// which will include 7 in the range and making sure the upper value bound
 		// reflects the updated range.
 		Range tempRange = Range.expandToInclude(new Range(4, 6), 7);// This is creating the test range for this test.
@@ -202,7 +206,7 @@ public class RangeTest {
 	 * asserting that the lower margin will remain the same of 4.
 	 */
 	@Test
-	public void expandToInlcudeOutsideUpperRangeLower() { // This test is for testing the expanding the range
+	public void expandToInlcudeOutsideUpperRangeLower() {
 		// which will include 7 in the range and making sure the lower bound remains the
 		// same.
 		Range tempRange = Range.expandToInclude(new Range(4, 6), 7);// This is creating the test range for this test.
@@ -215,7 +219,7 @@ public class RangeTest {
 	 * asserting that the upper margin will remain the same to be 7.
 	 */
 	@Test
-	public void expandToInlcudeOutsideLowerRangeUpper() {// This test is for testing the expanding the range
+	public void expandToInlcudeOutsideLowerRangeUpper() {
 		// which will include 1 in the range and making sure the upper bound remains the
 		// same.
 		Range tempRange = Range.expandToInclude(new Range(3, 7), 1);// This is creating the test range for this test.
@@ -228,7 +232,7 @@ public class RangeTest {
 	 * asserting that the lower bound change to be 1.
 	 */
 	@Test
-	public void expandToInlcudeOutsideLowerRangeLower() {// This test is for testing the expanding the range
+	public void expandToInlcudeOutsideLowerRangeLower() {
 		// which will include 1 in the range and making sure the lower value bound
 		// reflects the updated range.
 		Range tempRange = Range.expandToInclude(new Range(3, 7), 1);// This is creating the test range for this test.
@@ -237,11 +241,11 @@ public class RangeTest {
 	}
 
 	/**
-	 * This test will simulate expanding a range of 3 and 7 to include the value -5 -
-	 * asserting that the lower value will change to be -5.
+	 * This test will simulate expanding a range of 3 and 7 to include the value -5
+	 * - asserting that the lower value will change to be -5.
 	 */
 	@Test
-	public void expandToInlcudeOutsideLowerRangeLowerNeg() {// This test is for testing the expanding the range
+	public void expandToInlcudeOutsideLowerRangeLowerNeg() {
 		// which will include -5 in the range and making sure the lower value bound
 		// reflects the updated range.
 		Range tempRange = Range.expandToInclude(new Range(3, 7), -5);// This is creating the test range for this test.
@@ -254,7 +258,7 @@ public class RangeTest {
 	 * 11.2 - asserting that the upper margin will expand to be 11.2.
 	 */
 	@Test
-	public void expandToInlcudeOutsideUpperRangeUpperDecimal() { // This test is for testing the expanding the range
+	public void expandToInlcudeOutsideUpperRangeUpperDecimal() {
 		// which will include 5.7 in the range and making sure the upper value bound
 		// reflects the updated range.
 		Range tempRange = Range.expandToInclude(new Range(0.4, 5.7), 11.2);// This is creating the test range for this
@@ -268,7 +272,7 @@ public class RangeTest {
 	 * 7 - asserting that the lower margin will remain the same of 0.4.
 	 */
 	@Test
-	public void expandToInlcudeOutsideUpperRangeLowerDecimal() { // This test is for testing the expanding the range
+	public void expandToInlcudeOutsideUpperRangeLowerDecimal() {
 		// which will include 5.7 in the range and making sure the lower bound remains
 		// the same.
 		Range tempRange = Range.expandToInclude(new Range(0.4, 5.7), 11.2);// This is creating the test range for this
@@ -282,7 +286,7 @@ public class RangeTest {
 	 * 0.5 - asserting that the upper margin will expand to be 0.5.
 	 */
 	@Test
-	public void expandToInlcudeOutsideLowerRangeLowerDecimal() {// This test is for testing the expanding the range
+	public void expandToInlcudeOutsideLowerRangeLowerDecimal() {
 		// which will include 0.5 in the range and making sure the lower value bound
 		// reflects the updated range.
 		Range tempRange = Range.expandToInclude(new Range(1.6, 2.6), 0.5);// This is creating the test range for this
@@ -296,7 +300,7 @@ public class RangeTest {
 	 * 0.5 - asserting that the upper margin will remain the same of 2.6.
 	 */
 	@Test
-	public void expandToInlcudeOutsideLowerRangeUpperDecimal() {// This test is for testing the expanding the range
+	public void expandToInlcudeOutsideLowerRangeUpperDecimal() {
 		// which will include 0.5 in the range and making sure the upper bound will
 		// remain the same.
 		Range tempRange = Range.expandToInclude(new Range(1.6, 2.6), 0.5);// This is creating the test range for this
@@ -309,8 +313,12 @@ public class RangeTest {
 	// -----------------------------------------------------------------------------------------
 
 	// -----------------------------------------------------------------------------------------
-	// Code written by Alexis
+	// Code written by Alexis and Lauraine
 	// -----------------------------------------------------------------------------------------
+	/* Alexis codes and Lauraine reviews */
+
+	// ------------- combine(Range range1, Range range2) Tests ---------------------
+
 	/**
 	 * This test will be used to test what happens when the first parameter entered
 	 * is null. The second value (the other range) should be returned.
@@ -411,6 +419,10 @@ public class RangeTest {
 		// assertion that expected value matches the actual value (-8.0)
 	}
 
+	
+	
+	// ------------- getLength() Tests ---------------------
+
 	/**
 	 * This test will be used to test the length of a range when it should be zero.
 	 */
@@ -479,13 +491,15 @@ public class RangeTest {
 		double length = tempRange.getLength(); // calculate the length of the range
 		assertEquals("The length should be 400.03 and it is " + length, 400.03, length, .000000001d);
 	}
-	// -----------------------------------------------------------------------------------------
-	// end tests written by Alexis
-	// -----------------------------------------------------------------------------------------
 
-	// -----------------------------------------------------------------------------------------
-	// Code written by Lauraine
-	// -----------------------------------------------------------------------------------------
+	/* Lauraine codes and Alexis reviews */
+
+	// ------------- shift(Range base, double delta) Tests ---------------------
+
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * positive amount. We are only checking the upper bound of the range.
+	 */
 	@Test
 	public void shiftByPositiveDoubleUpperBound() {
 		testRange1 = new Range(2, 6);
@@ -493,6 +507,10 @@ public class RangeTest {
 		assertEquals("The shifted value should be ", 164.3, testShiftedRange.getUpperBound(), .000000001d);
 	}
 
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * positive amount. We are only checking the lower bound of the range.
+	 */
 	@Test
 	public void shiftByPositiveDoubleLowerBound() {
 		testRange1 = new Range(2, 6);
@@ -500,6 +518,10 @@ public class RangeTest {
 		assertEquals("The shifted value should be ", 4.2, testShiftedRange.getLowerBound(), .000000001d);
 	}
 
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * negative amount. We are only checking the upper bound of the range.
+	 */
 	@Test
 	public void shiftByNegativeDoubleUpperBound() {
 		testRange1 = new Range(2, 6);
@@ -507,6 +529,10 @@ public class RangeTest {
 		assertEquals("The shifted value should be ", 3.8, testShiftedRange.getUpperBound(), .000000001d);
 	}
 
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * negative amount. We are only checking the lower bound of the range.
+	 */
 	@Test
 	public void shiftByNegativeDoubleLowerBound() {
 		testRange1 = new Range(2, 6);
@@ -514,6 +540,11 @@ public class RangeTest {
 		assertEquals("The shifted value should be ", 0.8, testShiftedRange.getLowerBound(), .000000001d);
 	}
 
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * negative amount where the range will now have a negative coordinate. We are
+	 * only checking the upper bound of the range.
+	 */
 	@Test
 	public void shiftByNegativeDoubleToGetNegativeValueUpperBound() {
 		testRange1 = new Range(2, 6);
@@ -522,6 +553,11 @@ public class RangeTest {
 				.000000001d);
 	}
 
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * negative amount where the range will now have a negative coordinate. We are
+	 * only checking the lower bound of the range.
+	 */
 	@Test
 	public void shiftByNegativeDoubleToGetNegativeValueLowerBound() {
 		testRange1 = new Range(2, 6);
@@ -531,7 +567,7 @@ public class RangeTest {
 	}
 
 	// -----------------------------------------------------------------------------------------
-	// End of code by Lauraine
+	// End of code by Alexis and Lauraine
 	// -----------------------------------------------------------------------------------------
 
 	// -----------------------------------------------------------------------------------------
