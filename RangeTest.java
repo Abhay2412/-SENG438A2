@@ -329,8 +329,12 @@ public class RangeTest {
 	// -----------------------------------------------------------------------------------------
 
 	// -----------------------------------------------------------------------------------------
-	// Code written by Alexis
+	// Code written by Alexis and Lauraine
 	// -----------------------------------------------------------------------------------------
+	/* Alexis codes and Lauraine reviews */
+
+	// ------------- combine(Range range1, Range range2) Tests ---------------------
+
 	/**
 	 * This test will be used to test what happens when the first parameter entered
 	 * is null. The second value (the other range) should be returned.
@@ -431,6 +435,10 @@ public class RangeTest {
 		// assertion that expected value matches the actual value (-8.0)
 	}
 
+	
+	
+	// ------------- getLength() Tests ---------------------
+
 	/**
 	 * This test will be used to test the length of a range when it should be zero.
 	 */
@@ -499,13 +507,15 @@ public class RangeTest {
 		double length = tempRange.getLength(); // calculate the length of the range
 		assertEquals("The length should be 400.03 and it is " + length, 400.03, length, .000000001d);
 	}
-	// -----------------------------------------------------------------------------------------
-	// end tests written by Alexis
-	// -----------------------------------------------------------------------------------------
 
-	// -----------------------------------------------------------------------------------------
-	// Code written by Lauraine
-	// -----------------------------------------------------------------------------------------
+	/* Lauraine codes and Alexis reviews */
+
+	// ------------- shift(Range base, double delta) Tests ---------------------
+
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * positive amount. We are only checking the upper bound of the range.
+	 */
 	@Test
 	public void shiftByPositiveDoubleUpperBound() {
 		testRange1 = new Range(2, 6);
@@ -513,6 +523,10 @@ public class RangeTest {
 		assertEquals("The shifted value should be ", 164.3, testShiftedRange.getUpperBound(), .000000001d);
 	}
 
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * positive amount. We are only checking the lower bound of the range.
+	 */
 	@Test
 	public void shiftByPositiveDoubleLowerBound() {
 		testRange1 = new Range(2, 6);
@@ -520,6 +534,10 @@ public class RangeTest {
 		assertEquals("The shifted value should be ", 4.2, testShiftedRange.getLowerBound(), .000000001d);
 	}
 
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * negative amount. We are only checking the upper bound of the range.
+	 */
 	@Test
 	public void shiftByNegativeDoubleUpperBound() {
 		testRange1 = new Range(2, 6);
@@ -527,6 +545,10 @@ public class RangeTest {
 		assertEquals("The shifted value should be ", 3.8, testShiftedRange.getUpperBound(), .000000001d);
 	}
 
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * negative amount. We are only checking the lower bound of the range.
+	 */
 	@Test
 	public void shiftByNegativeDoubleLowerBound() {
 		testRange1 = new Range(2, 6);
@@ -534,14 +556,24 @@ public class RangeTest {
 		assertEquals("The shifted value should be ", 0.8, testShiftedRange.getLowerBound(), .000000001d);
 	}
 
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * negative amount where the range will now have a negative coordinate. We are
+	 * only checking the upper bound of the range.
+	 */
 	@Test
 	public void shiftByNegativeDoubleToGetNegativeValueUpperBound() {
 		testRange1 = new Range(2, 6);
 		Range testShiftedRange = Range.shift(testRange1, -6.8);
-		assertEquals("The value for the upper bound is incorrect.", -0.8, testShiftedRange.getUpperBound(),
+		assertEquals("The value for the lower bound is incorrect.", -0.8, testShiftedRange.getUpperBound(),
 				.000000001d);
 	}
 
+	/**
+	 * This test will be used to test what happens when a range is shifted by a
+	 * negative amount where the range will now have a negative coordinate. We are
+	 * only checking the lower bound of the range.
+	 */
 	@Test
 	public void shiftByNegativeDoubleToGetNegativeValueLowerBound() {
 		testRange1 = new Range(2, 6);
@@ -551,7 +583,7 @@ public class RangeTest {
 	}
 
 	// -----------------------------------------------------------------------------------------
-	// End of code by Lauraine
+	// End of code by Alexis and Lauraine
 	// -----------------------------------------------------------------------------------------
 
 	// -----------------------------------------------------------------------------------------
