@@ -8,7 +8,7 @@
 | Rachel Renegado|     |
 | Lauraine Baffot|     |
 | Abhay Khosla   |     |
-|                |     |
+| Alexis Hamrak  |     |
 
 # 1 Introduction
 
