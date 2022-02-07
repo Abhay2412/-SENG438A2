@@ -519,9 +519,9 @@ public class DataUtilitiesTest {
 	/**
 	 * This test will simulate passing a negative number for the column. The
 	 * negative number is passed to calculateColumnTotalNegativeColumnNumber() with
-	 * a Values2D table and expects that an IllegalArgumentException is thrown.S
+	 * a Values2D table and expects that an IllegalArgumentException is thrown.
 	 */
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void calculateColumnTotalNegativeColumnNumber() {
 		Mockery mockingContext = new Mockery();
 		final Values2D values = mockingContext.mock(Values2D.class);
