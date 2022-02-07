@@ -106,4 +106,8 @@ Text…
 
 # 6 Comments/feedback on the lab itself
 
-Text…
+As a group, we found the differences between what was posted on D2L and what was posted on Git to be quite confusing. These differences resulted in major uncertainties and obstacles that prevailed throughout the lab. Specifically, comparing the files on D2L and git, the artifacts folder and lab document were different versions and performed differently when testing. Due to this lack of consistency between platforms, initially half of our group operated on the D2L files and half operated on the git files - resulting in us being very confused when we had different tests fail. For example, on the D2L version, the getUpperBound() function in the Range class failed to return the upper bound value, but in the Git version, getUpperBound() returned the correct value. It was more frustrating to hear that other groups were experiencing the same problems, yet there was no announcement made during the lab or in lectures that we were meant to use the git files explicitly; groups had to contact the professor or TA to know that the D2L version was out of date. 
+
+As mentioned in the above section, after our group switched to working on the Git version, there still were issues with the files from the artifact folder. The mock test were all failing due to hamcrest not being included in our artifacts folder. This issue was resolved AFTER we contacted the TA and Professor to clarify if we are allowed/meant to include external jars such as hamcrest.
+
+Overall, this miscommunication caused confusion and resulted in us having to constantly adapt and work around these obstacles.
