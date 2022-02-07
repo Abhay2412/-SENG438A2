@@ -601,7 +601,11 @@ public class DataUtilitiesTest {
 	}
 	
 	
+	
+	
 	/* Alexis codes and Lauraine reviews */
+	// ------------- equal(double[][] a, double[][] b) Tests ---------------------
+	
 	/**
 	 * This test will check the equals() function to see if two equal (and same length) double 2D arrays can be passed in as arguments
 	 * and are found to be equal.
