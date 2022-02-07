@@ -17,9 +17,11 @@ Text…
 # 2 Detailed description of unit test strategy
 
 **Test plan**:
+
 We will begin by reviewing the java documentation to understand how both the DataUtilities and Range classes and methods work. Once we have developed a strong understanding of both classes, we will start the planning and development of our 10 test cases. Since DataUtilities only has 5 methods, we will conduct unit tests for each method. If we determine that some of the methods need more than one test case to truly test the behavior, we will create another test case for that method. For the Range class, we will choose 5 out of 15 of the methods to test. Similar to the DataUtilities class, we will add more test cases for these methods as necessary. After we have decided which methods to test, we will determine which black-box test-case design techniques should be used in our test case implementation (such as equivalence classes, boundary conditions, etc.).
 
 **Input Partitions**
+
 *Range Class Methods*
 
 expand(Range range, double lowerMargin, double upperMargin)
