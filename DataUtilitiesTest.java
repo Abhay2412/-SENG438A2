@@ -37,7 +37,7 @@ public class DataUtilitiesTest {
 	// -----------------------------------------------------------------------------------------
 	// CODE CREATED BY ABHAY AND RACHEL
 	// -----------------------------------------------------------------------------------------
-	/* Abhay codes and Rachel Reviews */
+	/* Abhay codes and Rachel reviews */
 
 	// ------------- createNumberArray2D(double[][] data) Tests -----------
 	@Test
@@ -102,7 +102,7 @@ public class DataUtilitiesTest {
 				actualArray);
 	}
 
-	/* Rachel codes and Abhay Reviews */
+	/* Rachel codes and Abhay reviews */
 
 	// ------------- createNumberArray(double[] data) Tests ----------------------
 	@Test
@@ -285,13 +285,15 @@ public class DataUtilitiesTest {
 		assertEquals("The row total is adding up to -15", -15, result, .000000001d);
 	}
 	// -----------------------------------------------------------------------------------------
-	// End of code created by Abhday and Rachel
+	// End of code created by Abhay and Rachel
 	// -----------------------------------------------------------------------------------------
 
 	// -----------------------------------------------------------------------------------------
 	// Code created by Alexis and Lauraine
 	// -----------------------------------------------------------------------------------------
+	/* Lauraine codes and Alexis reviews */
 	
+	// ------------- calculateColumnTotal(Values2D data, int column) Tests ---------------------
 	@Test
 	public void calculateColumnTotalEmptyChart() {
 		Mockery mockingContext = new Mockery();
@@ -382,6 +384,10 @@ public class DataUtilitiesTest {
 		double result = DataUtilities.calculateRowTotal(values, columnNumber);
 		assertEquals("The row total is adding up to -10.7", -10.7, result, .000000001d);
 	}
+	
+	
+	/* Alexis codes and Lauraine reviews */
+	
 	
 	// -----------------------------------------------------------------------------------------
 	// End of code created by Alexis and Lauraine
