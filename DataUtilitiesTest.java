@@ -502,7 +502,7 @@ public class DataUtilitiesTest {
 			}
 		});
 		int columnumber = 0;
-		double result = DataUtilities.calculateRowTotal(values, columnumber);
+		double result = DataUtilities.calculateColumnTotal(values, columnumber);
 		assertEquals("The column total is adding up to 0", 0, result, .000000001d);
 	}
 
@@ -512,7 +512,7 @@ public class DataUtilitiesTest {
 	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void calculateColumnTotalNull() {
-		double result = DataUtilities.calculateRowTotal(null, 0);
+		double result = DataUtilities.calculateColumnTotal(null, 0);
 		assertEquals("The exception thrown type is IllegalArgumentException", 0.0, result, .000000001d);
 	}
 
@@ -521,7 +521,7 @@ public class DataUtilitiesTest {
 	 * negative number is passed to calculateColumnTotalNegativeColumnNumber() with
 	 * a Values2D table and expects that an IllegalArgumentException is thrown.S
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void calculateColumnTotalNegativeColumnNumber() {
 		Mockery mockingContext = new Mockery();
 		final Values2D values = mockingContext.mock(Values2D.class);
@@ -540,7 +540,7 @@ public class DataUtilitiesTest {
 		});
 		int columnNumber = -1;
 		double result = DataUtilities.calculateColumnTotal(values, columnNumber);
-		assertEquals("The exception thrown type is IllegalArgumentException", 15.0, result, .000000001d);
+		assertEquals("The columnNumber is zero-based (no negatives).", 0.0, result, .000000001d);
 	}
 
 	/**
@@ -596,7 +596,7 @@ public class DataUtilitiesTest {
 			}
 		});
 		int columnNumber = 1;
-		double result = DataUtilities.calculateRowTotal(values, columnNumber);
+		double result = DataUtilities.calculateColumnTotal(values, columnNumber);
 		assertEquals("The row total is adding up to -10.7", -10.7, result, .000000001d);
 	}
 	
