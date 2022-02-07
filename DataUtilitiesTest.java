@@ -484,6 +484,12 @@ public class DataUtilitiesTest {
 	/* Lauraine codes and Alexis reviews */
 	
 	// ------------- calculateColumnTotal(Values2D data, int column) Tests ---------------------
+	
+	/**
+	 * This test will simulate creating an empty Values2D table. The empty table is
+	 * passed to calculateColumnTotal() with a column number of 0 and expects that
+	 * the total of the values in the row equal to 0.
+	 */
 	@Test
 	public void calculateColumnTotalEmptyChart() {
 		Mockery mockingContext = new Mockery();
@@ -499,13 +505,22 @@ public class DataUtilitiesTest {
 		double result = DataUtilities.calculateRowTotal(values, columnumber);
 		assertEquals("The column total is adding up to 0", 0, result, .000000001d);
 	}
-	
+
+	/**
+	 * This test will simulate passing a null object to calculateColumnTotal() with
+	 * a column number of 0 and expects that an IllegalArgumentException is thrown.
+	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void calculateColumnTotalNull() {
 		double result = DataUtilities.calculateRowTotal(null, 0);
 		assertEquals("The exception thrown type is IllegalArgumentException", 0.0, result, .000000001d);
 	}
 
+	/**
+	 * This test will simulate passing a negative number for the column. The
+	 * negative number is passed to calculateColumnTotalNegativeColumnNumber() with
+	 * a Values2D table and expects that an IllegalArgumentException is thrown.S
+	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void calculateColumnTotalNegativeColumnNumber() {
 		Mockery mockingContext = new Mockery();
@@ -528,6 +543,11 @@ public class DataUtilitiesTest {
 		assertEquals("The exception thrown type is IllegalArgumentException", 15.0, result, .000000001d);
 	}
 
+	/**
+	 * This test will simulate creating a Values2D table with positive values. The
+	 * table is passed to calculateColumnTotal() with a column number of 1 and
+	 * expects that the total of the values in the column is correct.
+	 */
 	@Test
 	public void calculateColumnTotalPositive() {
 		Mockery mockingContext = new Mockery();
@@ -553,6 +573,11 @@ public class DataUtilitiesTest {
 		assertEquals("The column total is adding up to 6", 6.0, result, .000000001d);
 	}
 
+	/**
+	 * This test will simulate creating a Values2D table with negative values. The
+	 * table is passed to calculateColumnTotal() with a column number of 1 and
+	 * expects that the total of the values in the column is correct.
+	 */
 	@Test
 	public void calculateColumnTotalNegative() {
 		Mockery mockingContext = new Mockery();
