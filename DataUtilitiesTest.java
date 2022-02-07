@@ -607,7 +607,7 @@ public class DataUtilitiesTest {
 	 * and are found to be equal.
 	 */
 	@Test
-	public void testEqualityOfEqualDoubleArrays_SameLength() {
+	public void testEqualityOfEqualArrays_SameLength() {
 		double[][] array1 = {{4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11}, {4.1, -19, 20.44, 4, 17.1234, 10, 8.77, 6, 30, 1}};
 		double[][] equalArray = {{4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11}, {4.1, -19, 20.44, 4, 17.1234, 10, 8.77, 6, 30, 1}};
 		
@@ -621,7 +621,7 @@ public class DataUtilitiesTest {
 	 * and are found not equal.
 	 */
 	@Test
-	public void testEqualityOfUnequalDoubleArrays_SameLength() {
+	public void testEqualityOfUnequalArrays_SameLength() {
 		double[][] array1 = {{4, -19, 20.4, 2.22, 17.2, 10, 8.7, 6.999, 30, 1.21}, {100.22, -66.2, 20.33, 4, 17, 10.01, 8, 17, 9.4, 2039.22}};
 		double[][] equalArray = {{1.0, -15, -11, 4.88, -17, 10, 8.66, 6, -78.22, 1}, {4.88, -19.4, 16, 17, -9.44, 10, 10.00, 6.4, 30, 1.6524}};
 		
@@ -635,7 +635,7 @@ public class DataUtilitiesTest {
 	 * and are found to be not equal.
 	 */
 	@Test
-	public void testEqualityOfDoubleArrays_DifferentLength() {
+	public void testEqualityOfArrays_DifferentLength() {
 		double[][] array1 = {{4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11}, {4.1, -19, 20.44, 4, 17.1234, 10, 8.77, 6, 30, 1}};
 		double[][] equalArray = {{4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11}, {4.1, -19, 20.44, 4, 17.1234}};
 		
@@ -645,13 +645,13 @@ public class DataUtilitiesTest {
 	}
 	
 	/**
-	 * This test will check the equals() function to see if two different (but same length) 2D int arrays can be passed in as arguments
+	 * This test will check the equals() function to see if a null and double array can be passed in as arguments
 	 * and are found to be not equal.
 	 */
 	@Test
-	public void testEqualityOfUnequalIntArrays_SameLength() {
-		double[][] array1 = {{4, -19, 20, 2, 17, 10, 8, 6, 30, 1}, {100, -66, 20, 4, 17, 10, 8, 17, 9, 2039}};
-		double[][] equalArray = {{1, -15, -11, 4, -17, 10, 8, 6, -78, 1}, {4, -19, 16, 17, -9, 10, 10, 6, 30, 1}};
+	public void testEqualityOfFirstNullArray() {
+		double[][] array1 = null;
+		double[][] equalArray = {{55, -1, 0, 23, 777}, {1000, -63, 620}};
 		
 		boolean equality = DataUtilities.equal(array1, equalArray);
 		
@@ -659,13 +659,27 @@ public class DataUtilitiesTest {
 	}
 	
 	/**
-	 * This test will check the equals() function to see if two identical 2D int arrays can be passed in as arguments
+	 * This test will check the equals() function to see if a null and double array can be passed in as arguments
+	 * and are found to be not equal.
+	 */
+	@Test
+	public void testEqualityOfSecondNullArray() {
+		double[][] array2 = null;
+		double[][] equalArray = {{55, -1, 0, 23, 777}, {1000, -63, 620}};
+		
+		boolean equality = DataUtilities.equal(equalArray, array2);
+		
+		assertEquals("The equality should be false", false, equality);
+	}
+	
+	/**
+	 * This test will check the equals() function to see if two null arrays can be passed in as arguments
 	 * and are found to be equal.
 	 */
 	@Test
-	public void testEqualityOfEqualIntArrays_SameLength() {
-		double[][] array1 = {{55, -1, 0, 23, 777}, {1000, -63, 620}};
-		double[][] equalArray = {{55, -1, 0, 23, 777}, {1000, -63, 620}};
+	public void testEqualityOfTwoNullArrays() {
+		double[][] array1 = null;
+		double[][] equalArray = null;
 		
 		boolean equality = DataUtilities.equal(array1, equalArray);
 		
