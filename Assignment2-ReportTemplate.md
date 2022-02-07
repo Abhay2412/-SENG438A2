@@ -19,12 +19,59 @@ Text…
 // including the input partitions you have designed
 
 # 3 Test cases developed
+**Range Class**
+|  Class Name | Method | Partition # Related | Test Case Name | Pass/Fail | 
+| ----------------- | ---------  | ------------------------  | ----------------------  | ------------ | 
+| Range | expand | 1 | expandNull() | Pass |
+| Range | expand |  | expandTestLowerMarginInt() | Pass |
+| Range | expand |  | expandTestUpperMarginInt() | Pass |
+| Range | expand |   | expandTestLowerMarginDecimal() | Pass |
+| Range | expand |   | expandTestUpperMarginDecimal() | Pass |
+| Range | expandToInlcude | 1 | expandToIncludeNullLower() | Pass |
+| Range | expandToInlcude | 1 | expandToIncludeNullUpper() | Pass |
+| Range | expandToInlcude |   | expandToInlcudeInsideRangeUpper() | Pass |
+| Range | expandToInlcude |   | expandToInlcudeInsideRangeLower() | Pass |
+| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeUpper() | Pass |
+| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeLower() | Pass |
+| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeUpper() | 	|
+| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeLower() |	|
+| Range | expandToInlcude |   | expandToInlcudeInsideRangeUpperNegative() |	|
+| Range | expandToInlcude |   | expandToInlcudeInsideRangeLowerNegative() |	|
+| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeUpperNegative() |	|
+| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeLowerNegative() |	|
+| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeLowerNegative() |	|
+| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeUpperNegative() | Pass |
+| Range | combine |   | combineFirstParameterNullUpperBound() |	|
+| Range | combine |   | combineFirstParameterNullLowerBound() |	|
+| Range | combine |   | combineSecondParameterNullUpperBound() | Pass |
+| Range | combine |   | combineSecondParameterNullLowerBound()| Pass |
+| Range | combine |   | combineBothParametersNullUpperBound() | Pass |
+| Range | combine |   | combineBothParametersNullLowerBound() | Pass |
+| Range | combine |   | combineNoParametersNullUpperBound() |	|
+| Range | combine |   | combineNoParametersNullLowerBound() | Pass |
+| Range | getLength |   | testGetLengthZero() | Pass |
+| Range | getLength |   | testGetLengthLargePositive() | Pass |
+| Range | getLength |   | testGetLengthLargeNegative() | Pass |
+| Range | getLength |   | testGetLengthRangeIsDouble() | Pass |
+| Range | getLength |   | testGetLengthRangeIsInt() | Pass |
+| Range | getLength |   | testGetLengthRangeDoubleAndInt() | Pass |
+| Range | shift |   | shiftByPositiveDoubleUpperBound() | Pass |
+| Range | shift |   | shiftByPositiveDoubleLowerBound() | Pass |
+| Range | shift |   | shiftByNegativeDoubleUpperBound() | Pass |
+| Range | shift |   | shiftByNegativeDoubleLowerBound() | Pass |
+| Range | shift |   | shiftByNegativeDoubleToGetNegativeValueUpperBound() | Fail |
+| Range | shift |   | shiftByNegativeDoubleToGetNegativeValueLowerBound() | Fail |
 
-Text…
+**DataUtilities**
+|  Class Name | Method | Partition # Related | Test Case Name | Pass/Fail | 
+| ----------------- | ---------  | ------------------------  | ----------------------  | ------------ | 
+| DataUtilities | calculateRowTotal |  |  | |
+| DataUtilities | createNumberArray |  |  | |
+| DataUtilities | createNumberArray2D |  |  | |
+| DataUtilities | calculateColumnTotal |  |  | |
+| DataUtilities | equal |  |  | |
 
-// write down the name of the test methods and classes. Organize the based on
-the source code method // they test. identify which tests cover which partitions
-you have explained in the test strategy section //above
+
 
 # 4 How the team work/effort was divided and managed
 
