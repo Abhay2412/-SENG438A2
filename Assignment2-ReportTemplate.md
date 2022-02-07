@@ -16,7 +16,58 @@ Text…
 
 # 2 Detailed description of unit test strategy
 
-// including the input partitions you have designed
+**Test plan**:
+We will begin by reviewing the java documentation to understand how both the DataUtilities and Range classes and methods work. Once we have developed a strong understanding of both classes, we will start the planning and development of our 10 test cases. Since DataUtilities only has 5 methods, we will conduct unit tests for each method. If we determine that some of the methods need more than one test case to truly test the behavior, we will create another test case for that method. For the Range class, we will choose 5 out of 15 of the methods to test. Similar to the DataUtilities class, we will add more test cases for these methods as necessary. After we have decided which methods to test, we will determine which black-box test-case design techniques should be used in our test case implementation (such as equivalence classes, boundary conditions, etc.).
+
+**Input Partitions**
+*Range Class Methods*
+
+expand(Range range, double lowerMargin, double upperMargin)
+1. The parameter: “the range (null not permitted) ” created a partition with two inputs: the range is null, and the range is not null.
+2. The Range was assumed to contain positive or negative lower and upper margins, which added two more inputs to the partition: test with range margins that are negative values, and range margins that are positive values.
+3. The parameters: “lowerMargin and upperMargin can be negative and positive percentages” added multiple outputs to the partition: varying sizes of negative and positive values for lowerMargin and upperMargin.
+
+expandToInclude(Range range, double value)
+1. The parameter: “the range (null permitted) ” created a partition with two inputs: the range is null, and the range is not null. 
+2. The parameter value was assumed to be either a negative or positive double value, which added multiple outputs to the partition: varying sizes of negative and positive values to include in the new range
+
+combine(Range range1, Range range2)
+1. The parameter: “the first range (null permitted)” created a partition with three inputs: the range is null, the range is not null and is a positive value, and the range is not null and is a negative value.
+2. The parameter: “the second range (null permitted)” added three more inputs to the partition: the range is null, the range is not null and is a positive value, and the range is not null and is a negative value.
+3. The last note “if both ranges are null, the return value is null” added another input to the partition where both ranges were null.
+4. The final input was if both ranges were not null and either positive or negative values.
+
+shift(Range base, double delta)
+1. The parameter: “base range (null not permitted)” created a partition with both null and not null Range object parameters.
+2. The parameter: “the shift amount” created a partition with two inputs: the amount and the Range are positive, the amount is negative and the range is positive.
+3. The parameter: “the shift amount” also created a partition with one input: the amount is a large negative number and the range is positive. This allowed us to see if the Range is able to be negative.
+
+getLength()
+1. There were no given parameters and requirements for the input, so we created a partition with a predicted output of length zero, output lengths that are large positive and negative values, as well as a predicted double output, and int output. This created a variety of input ranges including an input of 0, a large positive and negative, as well as both double and int values.
+
+
+*DataUtilities Class Methods*
+
+calculateRowTotal(Values2D data, int row)
+1. The parameter: “the data is basically all of the values that are in the mock objects” in this function it will be the row values. 
+2. The parameter: “the row is the number of the row which is being passed in” this number symbolizes the value which row currently is being added up to its total. 
+3. This function primarily focused on being able to create an object premade and then check if the calculateRowTotal would work as if it was a real object. 
+
+createNumberArray(double [] data)
+1. The parameter: “the data is basically the array object” which takes in the arrays which are created in order to be tested. 
+2. The function was responsible for creating an array which would be passed into the function to test if it properly creates the array with the data that is in it with the test cases being passed in it as well. 
+
+createNumberArray2D(double[][] data)
+1. The parameter: “the data is basically the array object” which takes in a double array in which we focus our tests to be on it
+2. Similarly to the one with one array indexed this one would have two arrays being passed into its data and then checking if it is able to create an array successfully.  
+
+calculateColumnTotal(Values2D data, int column)
+1. The parameter: “the table of values (null not permitted)” created a partition with both null and not null Values2D object parameters, either an empty object or not empty.
+2. The parameter: “the column index (zero-based)” adds more inputs to the partition with both positive and negative integer parameters.
+
+equal(double[][] a, double[][] b)
+1. The parameter: “To be considered equal, the arrays must have exactly the same dimensions, and the values in each array must also match (with NaN being equal in this test)” created a partition with multiple inputs; a and b with the same dimensions and same values, a and b with different dimensions, and a and b with the same dimensions but different values. 
+2. The parameters: “the first array and second array are null permitted” adds three more inputs to the partition; a is null and b is not, a is not null and b is null, and a and b are both null.
 
 # 3 Test cases developed
 **Range Class**
