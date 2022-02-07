@@ -291,7 +291,98 @@ public class DataUtilitiesTest {
 	// -----------------------------------------------------------------------------------------
 	// Code created by Alexis and Lauraine
 	// -----------------------------------------------------------------------------------------
+	
+	@Test
+	public void calculateColumnTotalEmptyChart() {
+		Mockery mockingContext = new Mockery();
+		final Values2D values = mockingContext.mock(Values2D.class);
 
+		mockingContext.checking(new Expectations() {
+			{
+				one(values).getRowCount();
+				will(returnValue(0));
+			}
+		});
+		int columnumber = 0;
+		double result = DataUtilities.calculateRowTotal(values, columnumber);
+		assertEquals("The column total is adding up to 0", 0, result, .000000001d);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void calculateColumnTotalNull() {
+		double result = DataUtilities.calculateRowTotal(null, 0);
+		assertEquals("The exception thrown type is IllegalArgumentException", 0.0, result, .000000001d);
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void calculateColumnTotalNegativeColumnNumber() {
+		Mockery mockingContext = new Mockery();
+		final Values2D values = mockingContext.mock(Values2D.class);
+
+		mockingContext.checking(new Expectations() {
+			{
+				one(values).getRowCount();
+				will(returnValue(2));
+
+				one(values).getValue(0, -1);
+				will(returnValue(5.0));
+
+				one(values).getValue(1, -1);
+				will(returnValue(10.0));
+			}
+		});
+		int columnNumber = -1;
+		double result = DataUtilities.calculateColumnTotal(values, columnNumber);
+		assertEquals("The exception thrown type is IllegalArgumentException", 15.0, result, .000000001d);
+	}
+
+	@Test
+	public void calculateColumnTotalPositive() {
+		Mockery mockingContext = new Mockery();
+		final Values2D values = mockingContext.mock(Values2D.class);
+
+		mockingContext.checking(new Expectations() {
+			{
+				one(values).getRowCount();
+				will(returnValue(3));
+
+				one(values).getValue(0, 1);
+				will(returnValue(1.0));
+
+				one(values).getValue(1, 1);
+				will(returnValue(2.0));
+
+				one(values).getValue(2, 1);
+				will(returnValue(3.0));
+			}
+		});
+		int columnNumber = 1;
+		double result = DataUtilities.calculateColumnTotal(values, columnNumber);
+		assertEquals("The column total is adding up to 6", 6.0, result, .000000001d);
+	}
+
+	@Test
+	public void calculateColumnTotalNegative() {
+		Mockery mockingContext = new Mockery();
+		final Values2D values = mockingContext.mock(Values2D.class);
+
+		mockingContext.checking(new Expectations() {
+			{
+				one(values).getRowCount();
+				will(returnValue(2));
+
+				one(values).getValue(0, 1);
+				will(returnValue(-4.8));
+
+				one(values).getValue(1, 1);
+				will(returnValue(-5.9));
+			}
+		});
+		int columnNumber = 1;
+		double result = DataUtilities.calculateRowTotal(values, columnNumber);
+		assertEquals("The row total is adding up to -10.7", -10.7, result, .000000001d);
+	}
+	
 	// -----------------------------------------------------------------------------------------
 	// End of code created by Alexis and Lauraine
 	// -----------------------------------------------------------------------------------------
