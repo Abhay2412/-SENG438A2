@@ -20,9 +20,7 @@ Text…
 
 We will begin by reviewing the java documentation to understand how both the DataUtilities and Range classes and methods work. Once we have developed a strong understanding of both classes, we will start the planning and development of our 10 test cases. Since DataUtilities only has 5 methods, we will conduct unit tests for each method. If we determine that some of the methods need more than one test case to truly test the behavior, we will create another test case for that method. For the Range class, we will choose 5 out of 15 of the methods to test. Similar to the DataUtilities class, we will add more test cases for these methods as necessary. After we have decided which methods to test, we will determine which black-box test-case design techniques should be used in our test case implementation (such as equivalence classes, boundary conditions, etc.).
 
-**Input Partitions:**
-
-*Range Class Methods*
+**Input Partitions: Range Class Methods**
 
 expand(Range range, double lowerMargin, double upperMargin)
 1. The parameter: “the range (null not permitted) ” created a partition with two inputs: the range is null, and the range is not null.
@@ -48,7 +46,7 @@ getLength()
 1. There were no given parameters and requirements for the input, so we created a partition with a predicted output of length zero, output lengths that are large positive and negative values, as well as a predicted double output, and int output. This created a variety of input ranges including an input of 0, a large positive and negative, as well as both double and int values.
 
 
-*DataUtilities Class Methods*
+**Input Partitions: DataUtilities Class Methods**
 
 calculateRowTotal(Values2D data, int row)
 1. The parameter: “the data is basically all of the values that are in the mock objects” in this function it will be the row values. 
