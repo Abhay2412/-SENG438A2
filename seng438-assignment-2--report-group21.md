@@ -29,7 +29,8 @@ expand(Range range, double lowerMargin, double upperMargin)
 
 expandToInclude(Range range, double value)
 1. The parameter: “the range (null permitted) ” created a partition with two inputs: the range is null, and the range is not null. 
-2. The parameter value was assumed to be either a negative or positive double value, which added multiple outputs to the partition: varying sizes of negative and positive values to include in the new range
+2. The Range was assumed to contain positive or negative lower and upper margins, which added two more inputs to the partition: test with range margins that are negative values, and range margins that are positive values.
+3. The parameter value was assumed to be either a negative or positive double value, which added multiple outputs to the partition: varying sizes of negative and positive values to include in the new range
 
 combine(Range range1, Range range2)
 1. The parameter: “the first range (null permitted)” created a partition with three inputs: the range is null, the range is not null and is a positive value, and the range is not null and is a negative value.
