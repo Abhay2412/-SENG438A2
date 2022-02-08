@@ -2,7 +2,6 @@ package org.jfree.data.test;
 
 import static org.junit.Assert.*;
 
-import org.jfree.data.DataUtilities;
 import org.jfree.data.Range;
 import org.junit.*;
 
