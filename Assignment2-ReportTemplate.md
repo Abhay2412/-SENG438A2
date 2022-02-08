@@ -84,28 +84,28 @@ equal(double[][] a, double[][] b)
 | Range | expandToInlcude |   | expandToInlcudeInsideRangeLower() | Pass |
 | Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeUpper() | Pass |
 | Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeLower() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeUpper() | 	|
-| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeLower() |	|
-| Range | expandToInlcude |   | expandToInlcudeInsideRangeUpperNegative() |	|
-| Range | expandToInlcude |   | expandToInlcudeInsideRangeLowerNegative() |	|
-| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeUpperNegative() |	|
-| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeLowerNegative() |	|
-| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeLowerNegative() |	|
+| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeUpper() | Pass |
+| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeLower() | Pass |
+| Range | expandToInlcude |   | expandToInlcudeInsideRangeUpperNegative() | Pass |
+| Range | expandToInlcude |   | expandToInlcudeInsideRangeLowerNegative() | Pass |
+| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeUpperNegative() | Pass |
+| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeLowerNegative() | Pass |
+| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeLowerNegative() | Pass |
 | Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeUpperNegative() | Pass |
-| Range | combine |   | combineFirstParameterNullUpperBound() |	|
-| Range | combine |   | combineFirstParameterNullLowerBound() |	|
-| Range | combine |   | combineSecondParameterNullUpperBound() | Pass |
-| Range | combine |   | combineSecondParameterNullLowerBound()| Pass |
-| Range | combine |   | combineBothParametersNullUpperBound() | Pass |
-| Range | combine |   | combineBothParametersNullLowerBound() | Pass |
-| Range | combine |   | combineNoParametersNullUpperBound() |	|
-| Range | combine |   | combineNoParametersNullLowerBound() | Pass |
-| Range | getLength |   | testGetLengthZero() | Pass |
-| Range | getLength |   | testGetLengthLargePositive() | Pass |
-| Range | getLength |   | testGetLengthLargeNegative() | Pass |
-| Range | getLength |   | testGetLengthRangeIsDouble() | Pass |
-| Range | getLength |   | testGetLengthRangeIsInt() | Pass |
-| Range | getLength |   | testGetLengthRangeDoubleAndInt() | Pass |
+| Range | combine | 1 | combineFirstParameterNullUpperBound() | Pass |
+| Range | combine | 1 | combineFirstParameterNullLowerBound() | Pass |
+| Range | combine | 2 | combineSecondParameterNullUpperBound() | Pass |
+| Range | combine | 2 | combineSecondParameterNullLowerBound()| Pass |
+| Range | combine | 3 | combineBothParametersNullUpperBound() | Pass |
+| Range | combine | 3 | combineBothParametersNullLowerBound() | Pass |
+| Range | combine | 4 | combineNoParametersNullUpperBound() | Pass |
+| Range | combine | 4 | combineNoParametersNullLowerBound() | Pass |
+| Range | getLength | 1 | testGetLengthZero() | Pass |
+| Range | getLength | 1 | testGetLengthLargePositive() | Pass |
+| Range | getLength | 1 | testGetLengthLargeNegative() | Pass |
+| Range | getLength | 1 | testGetLengthRangeIsDouble() | Pass |
+| Range | getLength | 1 | testGetLengthRangeIsInt() | Pass |
+| Range | getLength | 1 | testGetLengthRangeDoubleAndInt() | Pass |
 | Range | shift |   | shiftByPositiveDoubleUpperBound() | Pass |
 | Range | shift |   | shiftByPositiveDoubleLowerBound() | Pass |
 | Range | shift |   | shiftByNegativeDoubleUpperBound() | Pass |
@@ -116,13 +116,38 @@ equal(double[][] a, double[][] b)
 **DataUtilities**
 |  Class Name | Method | Partition # Related | Test Case Name | Pass/Fail | 
 | ----------------- | ---------  | ------------------------  | ----------------------  | ------------ | 
-| DataUtilities | calculateRowTotal |  |  | |
-| DataUtilities | createNumberArray |  |  | |
-| DataUtilities | createNumberArray2D |  |  | |
-| DataUtilities | calculateColumnTotal |  |  | |
-| DataUtilities | equal |  |  | |
+| DataUtilities | createNumberArray2D |  | createNumberRegular2DArrayOfFive()| Pass | 
+| DataUtilities | createNumberArray2D |  | createNumberRegular2DArrayOfOne()| Pass |
+| DataUtilities | createNumberArray2D |  | createNumberRegular2DArrayOfNegativeValues() | Pass |
+| DataUtilities | createNumberArray2D |  | createNumberRegular2DArrayOfHugeValues()| Pass |
+| DataUtilities | createNumberArray2D |  | createNumber2DEmptyArray()| Pass |
+| DataUtilities | createNumberArray2D |  | createNumber2DEmptyArrayOne()| Pass | 
+| DataUtilities | createNumberArray2D |  | createNumber2DEmptyArray()Empty| Pass | 
+| DataUtilities | calculateRowTotal |  | calculateRowTotalEmptyChart()| Pass |
+| DataUtilities | calculateRowTotal |  | createRowTotalNull()| Pass |
+| DataUtilities | calculateRowTotal |  | createRowTotalPositive()| Pass |
+| DataUtilities | calculateRowTotal |  | createRowTotalNegative()| Pass |
+| DataUtilities | createNumberArray |  | createNumberArrayPositiveDouble()| Pass |
+| DataUtilities | createNumberArray |  | createNumberArrayNegativeDouble()| Pass |
+| DataUtilities | createNumberArray |  | createNumberArrayNull()| Pass |
+| DataUtilities | createNumberArray |  | createNumberArrayZero()| Pass |
+| DataUtilities | createNumberArray |  | createNumberArrayEmpty()| Pass |
+| DataUtilities | createNumberArray |  | createNumberArrayNegativePositive()| Pass |
+| DataUtilities | createNumberArray |  | createNumberArrayMaxDoubleFour()| Pass |
+| DataUtilities | createNumberArray |  | createNumberArrayMinDoubleFour()| Pass |
+| DataUtilities | calculateColumnTotal |  | calculateColumnTotalEmptyChart()| Pass | 
+| DataUtilities | calculateColumnTotal |  | calculateColumnTotalNull()| Pass |
+| DataUtilities | calculateColumnTotal |  | calculateColumnTotalNegativeColumnNumber()| Fail |
+| DataUtilities | calculateColumnTotal |  | calculateColumnTotalPositive()| Pass |
+| DataUtilities | calculateColumnTotal |  | calculateColumnTotalNegative()| Pass | 
+| DataUtilities | equal | 1 | testEqualityOfEqualArrays_SameLength()| Pass |
+| DataUtilities | equal | 1 | testEqualityOfUnequalArrays_SameLength()| Pass |
+| DataUtilities | equal | 1 | testEqualityOfArrays_DifferentLength()| Pass |
+| DataUtilities | equal | 2 | testEqualityOfFirstNullArray()| Pass |
+| DataUtilities | equal | 2 | testEqualityOfSecondNullArray()| Pass |
+| DataUtilities | equal | 2 | testEqualityOfTwoNullArrays()| Pass |
 
-
+Each partition number matches the corresponding number for that function as listed in section 2. 
 
 # 4 How the team work/effort was divided and managed
 
