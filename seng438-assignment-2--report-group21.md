@@ -51,7 +51,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 -	range2 is null (Valid)
 -	range2 is not null (Valid)
 3. 	Null **range1 and range2**
--	ranges are both null (Valid)
+-	ranges are both null (Valid)	
 -	ranges are not null (Valid)
 
 #### `shift(Range base, double delta)` ####
@@ -255,3 +255,4 @@ As a group, we found the differences between what was posted on D2L and what was
 As mentioned in the section above, after our group switched to working on the GitHub version, there still were issues with the files from the artifact folder. The mock tests were all failing due to the *hamcrest-all* jar file not being included in our artifacts folder. This issue was resolved after we contacted the TA and Professor to clarify if we were allowed/meant to include external jars such as the *hamcrest-all* jar file.
 
 Overall, this miscommunication caused confusion and resulted in us having to constantly work around obstacles. Our group was able to navigate these issues because we have used JUnit testing before. Once we understood the classes themselves, the case writing was not all that difficult, but we feel that some more guidance for mocking would have been helpful.
+
