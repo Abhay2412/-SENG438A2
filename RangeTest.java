@@ -556,7 +556,7 @@ public class RangeTest {
 	public void shiftByNegativeDoubleToGetNegativeValueUpperBound() {
 		testRange1 = new Range(2, 6);
 		Range testShiftedRange = Range.shift(testRange1, -6.8);
-		assertEquals("The value for the lower bound is incorrect.", -0.8, testShiftedRange.getUpperBound(),
+		assertEquals("The value for the upper bound is incorrect.", -0.8, testShiftedRange.getUpperBound(),
 				.000000001d);
 	}
 
