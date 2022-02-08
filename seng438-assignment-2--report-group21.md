@@ -15,12 +15,12 @@
 In this lab, we were tasked with the concepts of unit testing which we used JUnit frameworks to create a testing environment that is composed of mock objects and test cases. The lab is meant for us to get familiar with using Eclipse and all of its functionality of JUnit as well as setting up a project with the JAR files given to us. The other focal point of the lab was to use Java documentation and create test cases for the classes from that as the foundation piece.
 
 # 2 Detailed description of unit test strategy
-##Test plan:##
+## Test plan:
  
 We will begin by reviewing the java documentation to understand how both the DataUtilities and Range classes and methods work. Once we have developed a strong understanding of both classes, we will start the planning and development of our 10 test cases. We will choose 5 out of the 9 DataUtilities methods to conduct unit tests on. If we determine that some of the methods need more than one test case to truly test the behavior, we will create another test case for that method. For the Range class, we will choose 5 out of 23 of the methods to test. Similar to the DataUtilities class, we will add more test cases for these methods as necessary. After we have decided which methods to test, we will determine which black-box test-case design techniques should be used in our test case implementation (such as equivalence classes, boundary conditions, etc...).
 
-### ‘Input Partitions: Range Class Methods’ ###
-*expand(Range range, double lowerMargin, double upperMargin)*
+### Input Partitions: Range Class Methods 
+### 'expand(Range range, double lowerMargin, double upperMargin)' ###
 1.	A null **range**
 -	range is null (Invalid)
 -	range is not null (Valid)
@@ -70,7 +70,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 -	input is a positive number (Valid)
 - 	input is zero (Valid)
 
-##Input Partitions: DataUtilities Class Methods ##
+## Input Partitions: DataUtilities Class Methods
 
 ### ‘calculateRowTotal(Values2D data, int row)’ ###
 1.	A null **data** 
