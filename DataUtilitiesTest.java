@@ -115,7 +115,7 @@ public class DataUtilitiesTest {
 	 * exception.
 	 */
 	@Test
-	public void createNumber2DEmptyArray() {
+	public void createNumber2DNullArray() {
 		try {
 			double[][] arrayToPass = null;
 			// creating a null double 2D array
