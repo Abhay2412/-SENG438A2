@@ -33,7 +33,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 
 *combine(Range range1, Range range2)*
 1. The parameter: “the first range (null permitted)” created a partition with three inputs: the range is null, the range is not null and is a positive value, and the range is not null and is a negative value.
-   1.1. Hello 
+   - Hello
 3. The parameter: “the second range (null permitted)” added three more inputs to the partition: the range is null, the range is not null and is a positive value, and the range is not null and is a negative value.
 4. The last note “if both ranges are null, the return value is null” added another input to the partition where both ranges were null.
 5. The final input was if both ranges were not null and either positive or negative values.
