@@ -12,7 +12,7 @@
 
 # 1 Introduction
 
-Text…
+In this lab, we were tasked with the concepts of unit testing which we used JUnit frameworks to create a testing environment that is composed of mock objects and test cases designed. The lab is meant to get familiar with using Eclipse and its functionality of JUnit and setting up a project with the JAR files given to us. The other focal point of the lab was to use Java documentation and create test cases for the classes from that as the foundation piece. 
 
 # 2 Detailed description of unit test strategy
 
