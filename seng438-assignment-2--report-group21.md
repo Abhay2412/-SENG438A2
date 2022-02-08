@@ -21,34 +21,34 @@ We will begin by reviewing the java documentation to understand how both the Dat
 
 **Input Partitions: Range Class Methods**
 
-expand(Range range, double lowerMargin, double upperMargin)
+*expand(Range range, double lowerMargin, double upperMargin)*
 1. The parameter: “the range (null not permitted) ” created a partition with two inputs: the range is null, and the range is not null.
 2. The Range was assumed to contain positive or negative lower and upper margins, which added two more inputs to the partition: test with range margins that are negative values, and range margins that are positive values.
 3. The parameters: “lowerMargin and upperMargin can be negative and positive percentages” added multiple outputs to the partition: varying sizes of negative and positive values for lowerMargin and upperMargin.
 
-expandToInclude(Range range, double value)
+*expandToInclude(Range range, double value)*
 1. The parameter: “the range (null permitted) ” created a partition with two inputs: the range is null, and the range is not null. 
 2. The Range was assumed to contain positive or negative lower and upper margins, which added two more inputs to the partition: test with range margins that are negative values, and range margins that are positive values.
 3. The parameter value was assumed to be either a negative or positive double value, which added multiple outputs to the partition: varying sizes of negative and positive values to include in the new range
 
-combine(Range range1, Range range2)
+*combine(Range range1, Range range2)*
 1. The parameter: “the first range (null permitted)” created a partition with three inputs: the range is null, the range is not null and is a positive value, and the range is not null and is a negative value.
 2. The parameter: “the second range (null permitted)” added three more inputs to the partition: the range is null, the range is not null and is a positive value, and the range is not null and is a negative value.
 3. The last note “if both ranges are null, the return value is null” added another input to the partition where both ranges were null.
 4. The final input was if both ranges were not null and either positive or negative values.
 
-shift(Range base, double delta)
+*shift(Range base, double delta)*
 1. The parameter: “base range (null not permitted)” created a partition with both null and not null Range object parameters.
 2. The parameter: “the shift amount” created a partition with two inputs: the amount and the Range are positive, the amount is negative and the range is positive.
 3. The parameter: “the shift amount” also created a partition with one input: the amount is a large negative number and the range is positive. This allowed us to see if the Range is able to be negative.
 
-getLength()
+*getLength()*
 1. There were no given parameters and requirements for the input, so we created a partition with a predicted output of length zero, output lengths that are large positive and negative values, as well as a predicted double output, and int output. This created a variety of input ranges including an input of 0, a large positive and negative, as well as both double and int values.
 
 
 **Input Partitions: DataUtilities Class Methods**
 
-calculateRowTotal(Values2D data, int row)
+*calculateRowTotal(Values2D data, int row)*
 1. The parameter: “the data is basically all of the values that are in the mock objects” in this function it will be the row values. 
 2. The parameter: “the row is the number of the row which is being passed in” this number indicates the row which will be used to calculate the total of its values. 
 3. This function primarily focused on being able to create an object premade and then check if the calculateRowTotal would work as if it was a real object. 
@@ -56,24 +56,24 @@ calculateRowTotal(Values2D data, int row)
 5. The function should throw an exception since null cannot be in the data parameter.
 6. Testing with negative and positive values in the rows to calculate it’s total
 
-createNumberArray(double [] data)
+*createNumberArray(double [] data)*
 1. The parameter, data, takes a double array and returns an array of type Number
 2. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values
 3. The function should be able to create an empty array
 4. The parameter, data has the restriction “null not permitted”
 
-createNumberArray2D(double[][] data)
+*createNumberArray2D(double[][] data)*
 1. The parameter, data, takes a double array and returns a 2D array of type Number
 2. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values 
 3. The function should be able to create an empty 2D array
 4. The parameter, data, has the restriction “null not permitted”
 
-calculateColumnTotal(Values2D data, int column)
+*calculateColumnTotal(Values2D data, int column)*
 1. The parameter, data, has a restriction detailing “the table of values (null not permitted)” 
 2. The parameter, column, was detailed to be “zero-based” meaning that the index value starts at zero (no negative indexes can exist).
 3. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values 
 
-equal(double[][] a, double[][] b)
+*equal(double[][] a, double[][] b)*
 1. The parameter: “To be considered equal, the arrays must have exactly the same dimensions, and the values in each array must also match (with NaN being equal in this test)” created a partition with multiple inputs; a and b with the same dimensions and same values, a and b with different dimensions, and a and b with the same dimensions but different values. 
 2. The parameters: “the first array and second array are null permitted” adds three more inputs to the partition; a is null and b is not, a is not null and b is null, and a and b are both null.
 
