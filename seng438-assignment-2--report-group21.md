@@ -223,20 +223,20 @@ Each partition number matches the corresponding number for that function as list
 As a group, we decided to use pair testing and divided the unit tests among ourselves. All of the work was done remotely using Discord with each group member sharing their screens in the pairs that were previously formed. The methods were also divided to make it easier to complete the lab instead of doing it all in one large group. The work was divided as followed:
 
 #### `Pair #1 (Rachel/Abhay): ` ####
-This pair developed test cases for 2 methods in the Range class:
+> This pair developed test cases for 2 methods in the Range class:
 - expand(Range range, double lowerMargin, double upperMargin)
 - expandToInclude(Range range, double value)
-This pair also developed unit test cases for 3 methods in the DataUtilities class:
+> This pair also developed unit test cases for 3 methods in the DataUtilities class:
 - calculateRowTotal(Values2D data, int row)
 - createNumberArray(double [] data)
 - createNumberArray2D(double[][] data)
 
 #### `Pair 2 (Alexis/Lauraine):` ####
-This pair developed unit test cases for 3 methods in the Range class:
+> This pair developed unit test cases for 3 methods in the Range class:
 - combine(Range range1, Range range2)
 - getLength()
 - shift(Range base, double delta)
-This pair also developed unit test cases for 2 methods in the DataUtilities class:
+> This pair also developed unit test cases for 2 methods in the DataUtilities class:
 - calculateColumnTotal(Values2D data, int column)
 - equal(double[][] a, double[][] b)
 
