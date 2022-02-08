@@ -610,18 +610,18 @@ public class DataUtilitiesTest {
 				will(returnValue(3));
 
 				one(values).getValue(0, 1);
-				will(returnValue(1.0));
+				will(returnValue(0.1));
 
 				one(values).getValue(1, 1);
-				will(returnValue(2.0));
+				will(returnValue(0.23));
 
 				one(values).getValue(2, 1);
-				will(returnValue(3.0));
+				will(returnValue(0.009));
 			}
 		});
 		int columnNumber = 1;
 		double result = DataUtilities.calculateColumnTotal(values, columnNumber);
-		assertEquals("The column total is adding up to 6", 6.0, result, .000000001d);
+		assertEquals("The column total is adding up to 0.339", 0.339, result, .000000001d);
 	}
 
 	/**
@@ -640,15 +640,15 @@ public class DataUtilitiesTest {
 				will(returnValue(2));
 
 				one(values).getValue(0, 1);
-				will(returnValue(-4.8));
+				will(returnValue(-45.8));
 
 				one(values).getValue(1, 1);
-				will(returnValue(-5.9));
+				will(returnValue(-5569.9));
 			}
 		});
 		int columnNumber = 1;
 		double result = DataUtilities.calculateColumnTotal(values, columnNumber);
-		assertEquals("The row total is adding up to -10.7", -10.7, result, .000000001d);
+		assertEquals("The row total is adding up to -5615.7", -5615.7, result, .000000001d);
 	}
 	
 	
