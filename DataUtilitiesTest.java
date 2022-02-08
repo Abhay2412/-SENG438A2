@@ -269,7 +269,12 @@ public class DataUtilitiesTest {
 		assertEquals("The row total is adding up to 10", 10, result, .000000001d);
 		// asserting the result adds up to 10 (1 + 2 + 3 + 4 = 10)
 	}
-
+	
+	/**
+	 * This test will simulate creating a Values2D table with negative values. The
+	 * table is passed to calculateRowTotal() with a row number of 1 and expects
+	 * that the total of the values in the row is correct.
+	 */
 	@Test
 	public void calculateRowTotalNegative() {
 		Mockery mockingContext = new Mockery();
@@ -319,6 +324,52 @@ public class DataUtilitiesTest {
 		// asserting the result adds up to 15
 		// (-1) + (-2) + (-3) + (-4) + (-5) = (-15)
 	}
+
+	/**
+	 * This test will simulate creating a Values2D table with a negative index.
+	 * Expectation is that an exception should be thrown.
+	 */
+	@Test
+	public void calculateRowTotalNegativeIndex() {
+		Mockery mockingContext = new Mockery();
+		// creating a new mock object called mockingContext
+		final Values2D values = mockingContext.mock(Values2D.class);
+		// mock object (mockingContext) is stored in the local variable 'values'
+		// 'values' is final so it can be referred to from within expectation blocks
+
+		mockingContext.checking(new Expectations() {
+			// a mock expectation block containing expectations of value
+			{
+				one(values).getColumnCount();
+				// invocation of getColumnCount() is expected once
+				will(returnValue(2));
+				// will always returns 5 when getColumnCount() is called
+
+				one(values).getValue(-1, 0);
+				// invocation of getValue(1, 0) is expected once
+				will(returnValue(-1.0));
+				// will always returns -1.0 when getValue(1, 0) is called
+
+				one(values).getValue(-1, 1);
+				// invocation of getValue(1, 1) is expected once
+				will(returnValue(-2.0));
+				// will always returns -2.0 when getValue(1, 1) is called
+			}
+		});
+		
+		int rowNumber = -1; // setting rowNumber to have an int value of -1
+		try {
+			DataUtilities.calculateRowTotal(values, rowNumber);
+			// calling calculateRowTotal with Values2D = values and at rowNumber -1
+			fail("This method should throw an exception!");
+			// creating a failure message for if an exception is not thrown
+		} catch (Exception e) {
+			assertEquals("The exception thrown type is IllegalArgumentException", IllegalArgumentException.class,
+					e.getClass());
+			// catching the exception, asserting that an IllegalArgumentException was thrown
+		}
+	}
+	
 	// ------------- createNumberArray(double[] data) Tests ----------------------
 	/* Rachel codes and Abhay Reviews */
 
