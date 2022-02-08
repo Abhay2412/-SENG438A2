@@ -15,7 +15,6 @@
 In this lab, we were tasked with the concepts of unit testing which we used JUnit frameworks to create a testing environment that is composed of mock objects and test cases designed. The lab is meant to get familiar with using Eclipse and its functionality of JUnit and setting up a project with the JAR files given to us. The other focal point of the lab was to use Java documentation and create test cases for the classes from that as the foundation piece. 
 
 # 2 Detailed description of unit test strategy
-
 **Test plan**:
 
 We will begin by reviewing the java documentation to understand how both the DataUtilities and Range classes and methods work. Once we have developed a strong understanding of both classes, we will start the planning and development of our 10 test cases. Since DataUtilities only has 5 methods, we will conduct unit tests for each method. If we determine that some of the methods need more than one test case to truly test the behavior, we will create another test case for that method. For the Range class, we will choose 5 out of 15 of the methods to test. Similar to the DataUtilities class, we will add more test cases for these methods as necessary. After we have decided which methods to test, we will determine which black-box test-case design techniques should be used in our test case implementation (such as equivalence classes, boundary conditions, etc.).
@@ -51,20 +50,28 @@ getLength()
 
 calculateRowTotal(Values2D data, int row)
 1. The parameter: “the data is basically all of the values that are in the mock objects” in this function it will be the row values. 
-2. The parameter: “the row is the number of the row which is being passed in” this number symbolizes the value which row currently is being added up to its total. 
+2. The parameter: “the row is the number of the row which is being passed in” this number indicates the row which will be used to calculate the total of its values. 
 3. This function primarily focused on being able to create an object premade and then check if the calculateRowTotal would work as if it was a real object. 
+4. The function should calculate the row total even if nothing is in it. 
+5. The function should throw an exception since null cannot be in the data parameter.
+6. Testing with negative and positive values in the rows to calculate it’s total
 
 createNumberArray(double [] data)
-1. The parameter: “the data is basically the array object” which takes in the arrays which are created in order to be tested. 
-2. The function was responsible for creating an array which would be passed into the function to test if it properly creates the array with the data that is in it with the test cases being passed in it as well. 
+1. The parameter, data, takes a double array and returns an array of type Number
+2. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values
+3. The function should be able to create an empty array
+4. The parameter, data has the restriction “null not permitted”
 
 createNumberArray2D(double[][] data)
-1. The parameter: “the data is basically the array object” which takes in a double array in which we focus our tests to be on it
-2. Similarly to the one with one array indexed this one would have two arrays being passed into its data and then checking if it is able to create an array successfully.  
+1. The parameter, data, takes a double array and returns a 2D array of type Number
+2. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values 
+3. The function should be able to create an empty 2D array
+4. The parameter, data, has the restriction “null not permitted”
 
 calculateColumnTotal(Values2D data, int column)
-1. The parameter: “the table of values (null not permitted)” created a partition with both null and not null Values2D object parameters, either an empty object or not empty.
-2. The parameter: “the column index (zero-based)” adds more inputs to the partition with both positive and negative integer parameters.
+1. The parameter, data, has a restriction detailing “the table of values (null not permitted)” 
+2. The parameter, column, was detailed to be “zero-based” meaning that the index value starts at zero (no negative indexes can exist).
+3. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values 
 
 equal(double[][] a, double[][] b)
 1. The parameter: “To be considered equal, the arrays must have exactly the same dimensions, and the values in each array must also match (with NaN being equal in this test)” created a partition with multiple inputs; a and b with the same dimensions and same values, a and b with different dimensions, and a and b with the same dimensions but different values. 
