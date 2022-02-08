@@ -50,6 +50,25 @@ public class RangeTest {
 	// ------------- expand(Range range, double lowerMargin, double upperMargin) Tests -----------
 
 	/**
+	 * This test will simulate creating expand a null range. This test should throw
+	 * an exception.
+	 */
+	@Test
+	public void expandNull() {
+		try {
+			Range nullRange = null; // creating a null range
+			testExpandRange = Range.expand(nullRange, 0.25, 0.5); // trying to expand the null range
+			fail("This method should throw an exception!");
+			// creating a failure message for if expand does not throw an
+			// exception
+		} catch (Exception e) {
+			assertEquals("The exception thrown type is IllegalArgumentException", IllegalArgumentException.class,
+					e.getClass());
+			// catching the exception, asserting that an IllegalArgumentException was thrown
+		}
+	}
+	
+	/**
 	 * This test will simulate expanding the range by 0.25 and 0.5 - asserting that
 	 * the lower margin will be expanded to be 1.
 	 */
