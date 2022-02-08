@@ -571,6 +571,28 @@ public class RangeTest {
 	// ------------- shift(Range base, double delta) Tests ---------------------
 
 	/**
+	 * This test will be used to test what happens when the first parameter is null
+	 * for the upper bound. This throw a illegal argument pointer exception as null
+	 * is not permitted.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void shiftNullUpperBound() {
+		Range testShiftedRange = Range.shift(null, 2.0);
+		assertEquals("The upper bound value should be null", testShiftedRange.getUpperBound());
+	}
+
+	/**
+	 * This test will be used to test what happens when the first parameter is null
+	 * for the lower bound. This throw a illegal argument pointer exception as null
+	 * is not permitted.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void shiftNullLowerBound() {
+		Range testShiftedRange = Range.shift(null, 2.0);
+		assertEquals("The lower bound value should be null", testShiftedRange.getLowerBound());
+	}
+	
+	/**
 	 * This test will be used to test what happens when a range is shifted by a
 	 * positive amount. We are only checking the upper bound of the range.
 	 */
