@@ -15,68 +15,123 @@
 In this lab, we were tasked with the concepts of unit testing which we used JUnit frameworks to create a testing environment that is composed of mock objects and test cases. The lab is meant for us to get familiar with using Eclipse and all of its functionality of JUnit as well as setting up a project with the JAR files given to us. The other focal point of the lab was to use Java documentation and create test cases for the classes from that as the foundation piece.
 
 # 2 Detailed description of unit test strategy
-**Test plan**:
+##Test plan:##
+ 
+We will begin by reviewing the java documentation to understand how both the DataUtilities and Range classes and methods work. Once we have developed a strong understanding of both classes, we will start the planning and development of our 10 test cases. We will choose 5 out of the 9 DataUtilities methods to conduct unit tests on. If we determine that some of the methods need more than one test case to truly test the behavior, we will create another test case for that method. For the Range class, we will choose 5 out of 23 of the methods to test. Similar to the DataUtilities class, we will add more test cases for these methods as necessary. After we have decided which methods to test, we will determine which black-box test-case design techniques should be used in our test case implementation (such as equivalence classes, boundary conditions, etc...).
 
-We will begin by reviewing the java documentation to understand how both the DataUtilities and Range classes and methods work. Once we have developed a strong understanding of both classes, we will start the planning and development of our 10 test cases. We will choose 5 out of the 9 DataUtilities methods to conduct unit tests. If we determine that some of the methods need more than one test case to truly test the behavior, we will create another test case for that method. For the Range class, we will choose 5 out of 23 of the methods to test. Similar to the DataUtilities class, we will add more test cases for these methods as necessary. After we have decided which methods to test, we will determine which black-box test-case design techniques should be used in our test case implementation (such as equivalence classes, boundary conditions, etc...).
-
-**Input Partitions: Range Class Methods**
-
+### ‘Input Partitions: Range Class Methods’ ###
 *expand(Range range, double lowerMargin, double upperMargin)*
-1. The parameter: “the range (null not permitted) ” created a partition with two inputs: the range is null, and the range is not null.
-2. The Range was assumed to contain positive or negative lower and upper margins, which added two more inputs to the partition: test with range margins that are negative values, and range margins that are positive values.
-3. The parameters: “lowerMargin and upperMargin can be negative and positive percentages” added multiple outputs to the partition: varying sizes of negative and positive values for lowerMargin and upperMargin.
-
-*expandToInclude(Range range, double value)*
-1. The parameter: “the range (null permitted) ” created a partition with two inputs: the range is null, and the range is not null. 
-2. The Range was assumed to contain positive or negative lower and upper margins, which added two more inputs to the partition: test with range margins that are negative values, and range margins that are positive values.
-3. The parameter value was assumed to be either a negative or positive double value, which added multiple outputs to the partition: varying sizes of negative and positive values to include in the new range
-
-*combine(Range range1, Range range2)*
-1. The parameter: “the first range (null permitted)” created a partition with three inputs: the range is null, the range is not null and is a positive value, and the range is not null and is a negative value.
-   - Hello
-3. The parameter: “the second range (null permitted)” added three more inputs to the partition: the range is null, the range is not null and is a positive value, and the range is not null and is a negative value.
-4. The last note “if both ranges are null, the return value is null” added another input to the partition where both ranges were null.
-5. The final input was if both ranges were not null and either positive or negative values.
-
-*shift(Range base, double delta)*
-1. The parameter: “base range (null not permitted)” created a partition with both null and not null Range object parameters.
-2. The parameter: “the shift amount” created a partition with two inputs: the amount and the Range are positive, the amount is negative and the range is positive.
-3. The parameter: “the shift amount” also created a partition with one input: the amount is a large negative number and the range is positive. This allowed us to see if the Range is able to be negative.
-
-*getLength()*
-1. There were no given parameters and requirements for the input, so we created a partition with a predicted output of length zero, output lengths that are large positive and negative values, as well as a predicted double output, and int output. This created a variety of input ranges including an input of 0, a large positive and negative, as well as both double and int values.
+1.	A null **range**
+-	range is null (Invalid)
+-	range is not null (Valid)
+2. 	**range** margins
+- 	range has negative margins (Valid)
+- 	range has positive margins (Valid)
+3. 	**lowerMargin and upperMargin** values
+-	value is a negative number (Valid)
+-	value is a positive number (Valid)
 
 
-**Input Partitions: DataUtilities Class Methods**
+### ‘expandToInclude(Range range, double value)’ ###
+1.	A null **range**
+-	range is null (Valid)
+-	range is not null (Valid)
+2. 	**range** margins
+- 	range has negative margins (Valid)
+- 	range has positive margins (Valid)
+3. 	**value** amount
+-	value is a negative number (Valid)
+-	value is a positive number (Valid)
 
-*calculateRowTotal(Values2D data, int row)*
-1. The parameter: “the data is basically all of the values that are in the mock objects” in this function it will be the row values. 
-2. The parameter: “the row is the number of the row which is being passed in” this number indicates the row which will be used to calculate the total of its values. 
-3. This function primarily focused on being able to create an object premade and then check if the calculateRowTotal would work as if it was a real object. 
-4. The function should calculate the row total even if nothing is in it. 
-5. The function should throw an exception since null cannot be in the data parameter.
-6. Testing with negative and positive values in the rows to calculate its total
 
-*createNumberArray(double [] data)*
-1. The parameter, data, takes a double array and returns an array of type Number
-2. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values
-3. The function should be able to create an empty array
-4. The parameter, data has the restriction “null not permitted”
+### ‘combine(Range range1, Range range2)’ ###
+1.	A null **range1**
+-	range1 is null (Valid)
+-	range1 is not null (Valid)
+2. 	A null **range2**
+-	range2 is null (Valid)
+-	range2 is not null (Valid)
+3. 	Null **range1 and range2**
+-	ranges are both null (Valid)
+-	ranges are not null (Valid)
 
-*createNumberArray2D(double[][] data)*
-1. The parameter, data, takes a double array and returns a 2D array of type Number
-2. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values 
-3. The function should be able to create an empty 2D array
-4. The parameter, data, has the restriction “null not permitted”
+### ‘shift(Range base, double delta)’ ###
+1.	A null **base**
+-	range is null (Invalid)
+-	range is not null (Valid)
+2. 	**delta** amount
+-	value is a negative number (Valid)
+-	value is a positive number (Valid)
 
-*calculateColumnTotal(Values2D data, int column)*
-1. The parameter, data, has a restriction detailing “the table of values (null not permitted)” 
-2. The parameter, column, was detailed to be “zero-based” meaning that the index value starts at zero (no negative indexes can exist).
-3. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values 
 
-*equal(double[][] a, double[][] b)*
-1. The parameter: “To be considered equal, the arrays must have exactly the same dimensions, and the values in each array must also match (with NaN being equal in this test)” created a partition with multiple inputs; a and b with the same dimensions and same values, a and b with different dimensions, and a and b with the same dimensions but different values. 
-2. The parameters: “the first array and second array are null permitted” adds three more inputs to the partition; a is null and b is not, a is not null and b is null, and a and b are both null.
+### ‘getLength()’ ###
+1. 	**input** amount
+-	input is a negative number (Valid)
+-	input is a positive number (Valid)
+- 	input is zero (Valid)
+
+##Input Partitions: DataUtilities Class Methods ##
+
+### ‘calculateRowTotal(Values2D data, int row)’ ###
+1.	A null **data** 
+-	data is null (Invalid)
+-	data is not null (Valid)
+2. 	Positive or negative values in **data**
+- 	elements are negative numbers (Valid)
+- 	elements are positve number (Valid)
+3.	Value in amounts in **data **
+	-	values are small (Valid)
+	- 	values are large (Valid)
+4. 	Number of elements in **data**
+-	data can be empty (Valid)
+-	data can have one or multiple elements (Valid)
+5. 	**row** value 
+-	row is less than zero (Invalid)
+-	row is equal or greater than zero (Valid)
+
+### ‘createNumberArray(double [] data)’ ###
+1.	A null **data** 
+-	data is null (Invalid)
+-	data is not null (Valid)
+2. 	Positive or negative values in **data**
+- 	values are negative numbers (Valid)
+- 	values are positve number (Valid)
+3.	Value(s) in amounts **data** 
+	-	values are small (Valid)
+	- 	values are large (Valid)
+4. 	Number of elements in **data**
+-	data can be empty (Valid)
+-	data can have one or multiple elements (Valid)
+
+### ‘createNumberArray2D(double[][] data)’ ###
+1.	A null **data** 
+-	data is null (Invalid)
+-	data is not null (Valid)
+2. 	Positive or negative values in **data**
+- 	values are negative numbers (Valid)
+- 	values are positive number (Valid)
+3.	Value(s) in amounts **data** 
+	-	values are small (Valid)
+	- 	values are large (Valid)
+4. 	Number of elements in **data**
+-	data can be empty (Valid)
+-	data can have one or multiple elements (Valid)
+
+### ‘calculateColumnTotal(Values2D data, int column)’ ###
+1. The parameter, data, has a restriction detailing “the table of values (null not permitted)” which creates our first partition.
+2. The parameter, column, was detailed to be “zero-based” meaning that the index value starts at zero (no negative indexes can exist) and thus creates a second partition.
+3. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values, which creates a third and final partition.
+
+### ‘equal(double[][] a, double[][] b)’ ###
+1.	Null **a and b**
+-	a and b are null (Valid)
+-	a and b are not null (Valid)
+- 	a is null and b is not null (Valid)
+- 	a is not null and b is null (Valid)
+2. 	**a and b** lengths and contents
+- 	a and b have the same length and same contents (Valid)
+- 	a and b have the same length and different contents (Valid)
+- 	a and b have different lengths (Valid)
 
 # 3 Test cases developed
 **Range Class**
