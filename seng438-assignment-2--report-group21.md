@@ -21,100 +21,100 @@ We will begin by reviewing the java documentation to understand how both the Dat
 ### Input Partitions: Range Class Methods 
 #### `expand(Range range, double lowerMargin, double upperMargin)` ####
 1.	A null **range**
--	range is null (Invalid)
--	range is not null (Valid)
+	-	range is null (Invalid)
+	-	range is not null (Valid)
 2. 	**range** margins
-- 	range has negative margins (Valid)
-- 	range has positive margins (Valid)
+	- 	range has negative margins (Valid)
+	- 	range has positive margins (Valid)
 3. 	**lowerMargin and upperMargin** values
--	value is a negative number (Valid)
--	value is a positive number (Valid)
+	-	value is a negative number (Valid)
+	-	value is a positive number (Valid)
 
 
 #### `expandToInclude(Range range, double value)` ####
 1.	A null **range**
--	range is null (Valid)
--	range is not null (Valid)
+	-	range is null (Valid)
+	-	range is not null (Valid)
 2. 	**range** margins
-- 	range has negative margins (Valid)
-- 	range has positive margins (Valid)
+	- 	range has negative margins (Valid)
+	- 	range has positive margins (Valid)
 3. 	**value** amount
--	value is a negative number (Valid)
--	value is a positive number (Valid)
+	-	value is a negative number (Valid)
+	-	value is a positive number (Valid)
 
 
 #### `combine(Range range1, Range range2)` ####
 1.	A null **range1**
--	range1 is null (Valid)
--	range1 is not null (Valid)
+	-	range1 is null (Valid)
+	-	range1 is not null (Valid)
 2. 	A null **range2**
--	range2 is null (Valid)
--	range2 is not null (Valid)
+	-	range2 is null (Valid)
+	-	range2 is not null (Valid)
 3. 	Null **range1 and range2**
--	ranges are both null (Valid)	
--	ranges are not null (Valid)
+	-	ranges are both null (Valid)	
+	-	ranges are not null (Valid)
 
 #### `shift(Range base, double delta)` ####
 1.	A null **base**
--	range is null (Invalid)
--	range is not null (Valid)
+	-	range is null (Invalid)
+	-	range is not null (Valid)
 2. 	**delta** amount
--	value is a negative number (Valid)
--	value is a positive number (Valid)
+	-	value is a negative number (Valid)
+	-	value is a positive number (Valid)
 
 
 #### `getLength()` ####
 1. 	**input** amount
--	input is a negative number (Valid)
--	input is a positive number (Valid)
-- 	input is zero (Valid)
+	-	input is a negative number (Valid)
+	-	input is a positive number (Valid)
+	- 	input is zero (Valid)
 
 ### Input Partitions: DataUtilities Class Methods
 
 #### `calculateRowTotal(Values2D data, int row)` ####
 1.	A null **data** 
--	data is null (Invalid)
--	data is not null (Valid)
+	-	data is null (Invalid)
+	-	data is not null (Valid)
 2. 	Positive or negative values in **data**
-- 	elements are negative numbers (Valid)
-- 	elements are positve number (Valid)
+	- 	elements are negative numbers (Valid)
+	- 	elements are positve number (Valid)
 3.	Value in amounts in **data **
 	-	values are small (Valid)
 	- 	values are large (Valid)
 4. 	Number of elements in **data**
--	data can be empty (Valid)
--	data can have one or multiple elements (Valid)
+	-	data can be empty (Valid)
+	-	data can have one or multiple elements (Valid)
 5. 	**row** value 
--	row is less than zero (Invalid)
--	row is equal or greater than zero (Valid)
+	-	row is less than zero (Invalid)
+	-	row is equal or greater than zero (Valid)
 
 #### `createNumberArray(double [] data)` ####
 1.	A null **data** 
--	data is null (Invalid)
--	data is not null (Valid)
+	-	data is null (Invalid)
+	-	data is not null (Valid)
 2. 	Positive or negative values in **data**
-- 	values are negative numbers (Valid)
-- 	values are positve number (Valid)
+	- 	values are negative numbers (Valid)
+	- 	values are positve number (Valid)
 3.	Value(s) in amounts **data** 
 	-	values are small (Valid)
 	- 	values are large (Valid)
 4. 	Number of elements in **data**
--	data can be empty (Valid)
--	data can have one or multiple elements (Valid)
+	-	data can be empty (Valid)
+	-	data can have one or multiple elements (Valid)
 
 #### `createNumberArray2D(double[][] data)` ####
 1.	A null **data** 
--	data is null (Invalid)
--	data is not null (Valid)
+	-	data is null (Invalid)
+	-	data is not null (Valid)
 2. 	Positive or negative values in **data**
-- 	values are negative numbers (Valid)
-- 	values are positive number (Valid)
+	- 	values are negative numbers (Valid)
+	- 	values are positive number (Valid)
 3.	Value(s) in amounts **data** 
 	-	values are small (Valid)
 	- 	values are large (Valid)
 4. 	Number of elements in **data**
--	data can be empty (Valid)
--	data can have one or multiple elements (Valid)
+	-	data can be empty (Valid)
+	-	data can have one or multiple elements (Valid)
 
 #### `calculateColumnTotal(Values2D data, int column)` ####
 1. The parameter, data, has a restriction detailing “the table of values (null not permitted)” which creates our first partition.
@@ -123,14 +123,14 @@ We will begin by reviewing the java documentation to understand how both the Dat
 
 #### `equal(double[][] a, double[][] b)` ####
 1.	Null **a and b**
--	a and b are null (Valid)
--	a and b are not null (Valid)
-- 	a is null and b is not null (Valid)
-- 	a is not null and b is null (Valid)
+	-	a and b are null (Valid)
+	-	a and b are not null (Valid)
+	- 	a is null and b is not null (Valid)
+	- 	a is not null and b is null (Valid)
 2. 	**a and b** lengths and contents
-- 	a and b have the same length and same contents (Valid)
-- 	a and b have the same length and different contents (Valid)
-- 	a and b have different lengths (Valid)
+	- 	a and b have the same length and same contents (Valid)
+	- 	a and b have the same length and different contents (Valid)
+	- 	a and b have different lengths (Valid)
 
 # 3 Test cases developed
 ### Range Class
