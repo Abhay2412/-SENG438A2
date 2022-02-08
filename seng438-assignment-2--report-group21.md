@@ -19,8 +19,8 @@ In this lab, we were tasked with the concepts of unit testing which we used JUni
  
 We will begin by reviewing the java documentation to understand how both the DataUtilities and Range classes and methods work. Once we have developed a strong understanding of both classes, we will start the planning and development of our 10 test cases. We will choose 5 out of the 9 DataUtilities methods to conduct unit tests on. If we determine that some of the methods need more than one test case to truly test the behavior, we will create another test case for that method. For the Range class, we will choose 5 out of 23 of the methods to test. Similar to the DataUtilities class, we will add more test cases for these methods as necessary. After we have decided which methods to test, we will determine which black-box test-case design techniques should be used in our test case implementation (such as equivalence classes, boundary conditions, etc...).
 
-### Input Partitions: Range Class Methods 
-### 'expand(Range range, double lowerMargin, double upperMargin)' ###
+## Input Partitions: Range Class Methods 
+### `expand(Range range, double lowerMargin, double upperMargin)` ###
 1.	A null **range**
 -	range is null (Invalid)
 -	range is not null (Valid)
@@ -32,7 +32,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 -	value is a positive number (Valid)
 
 
-### ‘expandToInclude(Range range, double value)’ ###
+### `expandToInclude(Range range, double value)` ###
 1.	A null **range**
 -	range is null (Valid)
 -	range is not null (Valid)
@@ -44,7 +44,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 -	value is a positive number (Valid)
 
 
-### ‘combine(Range range1, Range range2)’ ###
+### `combine(Range range1, Range range2)` ###
 1.	A null **range1**
 -	range1 is null (Valid)
 -	range1 is not null (Valid)
@@ -55,7 +55,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 -	ranges are both null (Valid)
 -	ranges are not null (Valid)
 
-### ‘shift(Range base, double delta)’ ###
+### `shift(Range base, double delta)` ###
 1.	A null **base**
 -	range is null (Invalid)
 -	range is not null (Valid)
@@ -64,7 +64,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 -	value is a positive number (Valid)
 
 
-### ‘getLength()’ ###
+### `getLength()` ###
 1. 	**input** amount
 -	input is a negative number (Valid)
 -	input is a positive number (Valid)
@@ -72,7 +72,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 
 ## Input Partitions: DataUtilities Class Methods
 
-### ‘calculateRowTotal(Values2D data, int row)’ ###
+### `calculateRowTotal(Values2D data, int row)` ###
 1.	A null **data** 
 -	data is null (Invalid)
 -	data is not null (Valid)
@@ -89,7 +89,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 -	row is less than zero (Invalid)
 -	row is equal or greater than zero (Valid)
 
-### ‘createNumberArray(double [] data)’ ###
+### `createNumberArray(double [] data)` ###
 1.	A null **data** 
 -	data is null (Invalid)
 -	data is not null (Valid)
@@ -103,7 +103,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 -	data can be empty (Valid)
 -	data can have one or multiple elements (Valid)
 
-### ‘createNumberArray2D(double[][] data)’ ###
+### `createNumberArray2D(double[][] data)` ###
 1.	A null **data** 
 -	data is null (Invalid)
 -	data is not null (Valid)
@@ -117,12 +117,12 @@ We will begin by reviewing the java documentation to understand how both the Dat
 -	data can be empty (Valid)
 -	data can have one or multiple elements (Valid)
 
-### ‘calculateColumnTotal(Values2D data, int column)’ ###
+### `calculateColumnTotal(Values2D data, int column)` ###
 1. The parameter, data, has a restriction detailing “the table of values (null not permitted)” which creates our first partition.
 2. The parameter, column, was detailed to be “zero-based” meaning that the index value starts at zero (no negative indexes can exist) and thus creates a second partition.
 3. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values, which creates a third and final partition.
 
-### ‘equal(double[][] a, double[][] b)’ ###
+### `equal(double[][] a, double[][] b)` ###
 1.	Null **a and b**
 -	a and b are null (Valid)
 -	a and b are not null (Valid)
