@@ -82,24 +82,28 @@ We will begin by reviewing the java documentation to understand how both the Dat
 |  Class Name | Method | Partition # Related | Test Case Name | Pass/Fail | 
 | ----------------- | ---------  | ------------------------  | ----------------------  | ------------ | 
 | Range | expand | 1 | expandNull() | Pass |
-| Range | expand |  | expandTestLowerMarginInt() | Pass |
-| Range | expand |  | expandTestUpperMarginInt() | Pass |
-| Range | expand |   | expandTestLowerMarginDecimal() | Pass |
-| Range | expand |   | expandTestUpperMarginDecimal() | Pass |
+| Range | expand | 2, 3 | expandTestLowerMarginInt() | Pass |
+| Range | expand | 2, 3 | expandTestUpperMarginInt() | Pass |
+| Range | expand | 3  | expandTestUpperMarginOverOne() | Pass |
+| Range | expand | 3  | expandTestUpperMarginLessOne() | Pass |
+| Range | expand |  2, 3 | expandTestLowerMarginDecimal() | Pass |
+| Range | expand |  2, 3 | expandTestUpperMarginDecimal() | Pass |
+| Range | expand | 3  | expandTestWithZero() | Pass |
+| Range | expand |  3 | expandTestUpperMarginNegativeRange() | Pass |
 | Range | expandToInlcude | 1 | expandToIncludeNullLower() | Pass |
 | Range | expandToInlcude | 1 | expandToIncludeNullUpper() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeInsideRangeUpper() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeInsideRangeLower() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeUpper() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeLower() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeUpper() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeLower() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeInsideRangeUpperNegative() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeInsideRangeLowerNegative() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeUpperNegative() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeOutsideUpperRangeLowerNegative() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeLowerNegative() | Pass |
-| Range | expandToInlcude |   | expandToInlcudeOutsideLowerRangeUpperNegative() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeInsideRangeUpper() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeInsideRangeLower() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeOutsideUpperRangeUpper() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeOutsideUpperRangeLower() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeOutsideLowerRangeUpper() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeOutsideLowerRangeLower() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeInsideRangeUpperNegative() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeInsideRangeLowerNegative() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeOutsideUpperRangeUpperNegative() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeOutsideUpperRangeLowerNegative() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeOutsideLowerRangeLowerNegative() | Pass |
+| Range | expandToInlcude | 2, 3 | expandToInlcudeOutsideLowerRangeUpperNegative() | Pass |
 | Range | combine | 1 | combineFirstParameterNullUpperBound() | Pass |
 | Range | combine | 1 | combineFirstParameterNullLowerBound() | Pass |
 | Range | combine | 2 | combineSecondParameterNullUpperBound() | Pass |
@@ -114,84 +118,90 @@ We will begin by reviewing the java documentation to understand how both the Dat
 | Range | getLength | 1 | testGetLengthRangeIsDouble() | Pass |
 | Range | getLength | 1 | testGetLengthRangeIsInt() | Pass |
 | Range | getLength | 1 | testGetLengthRangeDoubleAndInt() | Pass |
-| Range | shift |   | shiftByPositiveDoubleUpperBound() | Pass |
-| Range | shift |   | shiftByPositiveDoubleLowerBound() | Pass |
-| Range | shift |   | shiftByNegativeDoubleUpperBound() | Pass |
-| Range | shift |   | shiftByNegativeDoubleLowerBound() | Pass |
-| Range | shift |   | shiftByNegativeDoubleToGetNegativeValueUpperBound() | Fail |
-| Range | shift |   | shiftByNegativeDoubleToGetNegativeValueLowerBound() | Fail |
+| Range | shift | 1 | shiftNullUpperBound() | Pass |
+| Range | shift | 1 | shiftNullLowerBound() | Pass |
+| Range | shift | 2 | shiftByPositiveDoubleUpperBound() | Pass |
+| Range | shift | 2 | shiftByPositiveDoubleLowerBound() | Pass |
+| Range | shift | 2 | shiftByNegativeDoubleUpperBound() | Pass |
+| Range | shift | 2 | shiftByNegativeDoubleLowerBound() | Pass |
+| Range | shift | 3 | shiftByNegativeDoubleToGetNegativeValueUpperBound() | Fail |
+| Range | shift | 3 | shiftByNegativeDoubleToGetNegativeValueLowerBound() | Fail |
 
-**DataUtilities**
+*DataUtilities*
 |  Class Name | Method | Partition # Related | Test Case Name | Pass/Fail | 
 | ----------------- | ---------  | ------------------------  | ----------------------  | ------------ | 
-| DataUtilities | createNumberArray2D |  | createNumberRegular2DArrayOfFive()| Pass | 
-| DataUtilities | createNumberArray2D |  | createNumberRegular2DArrayOfOne()| Pass |
-| DataUtilities | createNumberArray2D |  | createNumberRegular2DArrayOfNegativeValues() | Pass |
-| DataUtilities | createNumberArray2D |  | createNumberRegular2DArrayOfHugeValues()| Pass |
-| DataUtilities | createNumberArray2D |  | createNumber2DEmptyArray()| Pass |
-| DataUtilities | createNumberArray2D |  | createNumber2DEmptyArrayOne()| Pass | 
-| DataUtilities | createNumberArray2D |  | createNumber2DEmptyArray()Empty| Pass | 
-| DataUtilities | calculateRowTotal |  | calculateRowTotalEmptyChart()| Pass |
-| DataUtilities | calculateRowTotal |  | createRowTotalNull()| Pass |
-| DataUtilities | calculateRowTotal |  | createRowTotalPositive()| Pass |
-| DataUtilities | calculateRowTotal |  | createRowTotalNegative()| Pass |
-| DataUtilities | createNumberArray |  | createNumberArrayPositiveDouble()| Pass |
-| DataUtilities | createNumberArray |  | createNumberArrayNegativeDouble()| Pass |
-| DataUtilities | createNumberArray |  | createNumberArrayNull()| Pass |
-| DataUtilities | createNumberArray |  | createNumberArrayZero()| Pass |
-| DataUtilities | createNumberArray |  | createNumberArrayEmpty()| Pass |
-| DataUtilities | createNumberArray |  | createNumberArrayNegativePositive()| Pass |
-| DataUtilities | createNumberArray |  | createNumberArrayMaxDoubleFour()| Pass |
-| DataUtilities | createNumberArray |  | createNumberArrayMinDoubleFour()| Pass |
-| DataUtilities | calculateColumnTotal |  | calculateColumnTotalEmptyChart()| Pass | 
-| DataUtilities | calculateColumnTotal |  | calculateColumnTotalNull()| Pass |
-| DataUtilities | calculateColumnTotal |  | calculateColumnTotalNegativeColumnNumber()| Fail |
-| DataUtilities | calculateColumnTotal |  | calculateColumnTotalPositive()| Pass |
-| DataUtilities | calculateColumnTotal |  | calculateColumnTotalNegative()| Pass | 
-| DataUtilities | equal | 1 | testEqualityOfEqualArrays_SameLength()| Pass |
-| DataUtilities | equal | 1 | testEqualityOfUnequalArrays_SameLength()| Pass |
-| DataUtilities | equal | 1 | testEqualityOfArrays_DifferentLength()| Pass |
-| DataUtilities | equal | 2 | testEqualityOfFirstNullArray()| Pass |
-| DataUtilities | equal | 2 | testEqualityOfSecondNullArray()| Pass |
-| DataUtilities | equal | 2 | testEqualityOfTwoNullArrays()| Pass |
+| DataUtilities | createNumberArray2D | 1,2  | createNumberRegular2DArrayOfFive() | Pass | 
+| DataUtilities | createNumberArray2D | 1,2 | createNumberRegular2DArrayOfOne() | Pass |
+| DataUtilities | createNumberArray2D | 1,2 | createNumberRegular2DArrayOfNegativeValues() | Pass |
+| DataUtilities | createNumberArray2D | 1,2 | createNumberRegular2DArrayOfHugeValues() | Pass |
+| DataUtilities | createNumberArray2D | 4 | createNumber2DNullArray() | Pass |
+| DataUtilities | createNumberArray2D | 3 | createNumber2DEmptyArrayOne() | Pass | 
+| DataUtilities | createNumberArray2D | 3  | createNumber2DEmptyArrayEmpty() | Pass | 
+| DataUtilities | calculateRowTotal | 2,3 | calculateRowTotalEmptyChart() | Pass |
+| DataUtilities | calculateRowTotal | 1 | createRowTotalNull() | Pass |
+| DataUtilities | calculateRowTotal | 2,3 | createRowTotalPositive() | Pass |
+| DataUtilities | calculateRowTotal | 2, 3 | createRowTotalNegative() | Pass |
+| DataUtilities | calculateRowTotal | 2 | calculateRowTotalNegativeIndex() | Fail |
+| DataUtilities | createNumberArray | 1, 2 | createNumberArrayPositiveDouble() | Pass |
+| DataUtilities | createNumberArray | 1, 2 | createNumberArrayNegativeDouble() | Pass |
+| DataUtilities | createNumberArray | 4 | createNumberArrayNull() | Pass |
+| DataUtilities | createNumberArray | 1, 2 | createNumberArrayZero() | Pass |
+| DataUtilities | createNumberArray | 3 | createNumberArrayEmpty() | Pass |
+| DataUtilities | createNumberArray | 1, 2 | createNumberArrayNegativePositive() | Pass |
+| DataUtilities | createNumberArray | 1, 2 | createNumberArrayMaxDoubleFour() | Pass |
+| DataUtilities | createNumberArray | 1, 2 | createNumberArrayMinDoubleFour() | Pass |
+| DataUtilities | calculateColumnTotal | 3 | calculateColumnTotalEmptyChart() | Pass | 
+| DataUtilities | calculateColumnTotal | 1 | calculateColumnTotalNull() | Pass |
+| DataUtilities | calculateColumnTotal | 2 | calculateColumnTotalNegativeColumnNumber() | Fail |
+| DataUtilities | calculateColumnTotal | 3 | calculateColumnTotalPositive() | Pass |
+| DataUtilities | calculateColumnTotal | 3 | calculateColumnTotalNegative() | Pass | 
+| DataUtilities | equal | 1 | testEqualityOfEqualArrays_SameLength() | Pass |
+| DataUtilities | equal | 1 | testEqualityOfUnequalArrays_SameLength() | Pass |
+| DataUtilities | equal | 1 | testEqualityOfArrays_DifferentLength() | Pass |
+| DataUtilities | equal | 2 | testEqualityOfFirstNullArray() | Pass |
+| DataUtilities | equal | 2 | testEqualityOfSecondNullArray() | Pass |
+| DataUtilities | equal | 2 | testEqualityOfTwoNullArrays() | Pass |
 
-Each partition number matches the corresponding number for that function as listed in section 2. 
+Each partition number matches the corresponding number for that function as listed in Section 2. 
+
 
 # 4 How the team work/effort was divided and managed
 
 As a group, we decided to use pair testing and divided the unit tests among ourselves. All of the work was also being done remotely using Discord with each group member sharing the screens in the pairs which we had formed. The functions were also divided to make it easier to complete the lab instead of doing it in all one large group. The work was divided as followed:
 
-**Pair #1 (Rachel/Abhay):**
-
+*Pair #1 (Rachel/Abhay):*
 This pair developed unit test cases for 2 methods in the Range class:
-expand(Range range, double lowerMargin, double upperMargin)
-expandToInclude(Range range, double value)
+- expand(Range range, double lowerMargin, double upperMargin)
+- expandToInclude(Range range, double value)
 This pair also developed unit test cases for 3 methods in the DataUtilitiesclass:
-calculateRowTotal(Values2D data, int row)
-createNumberArray(double [] data)
-createNumberArray2D(double[][] data)
+- calculateRowTotal(Values2D data, int row)
+- createNumberArray(double [] data)
+- createNumberArray2D(double[][] data)
 
-**Pair 2 (Alexis/Lauraine):**
-
+*Pair 2 (Alexis/Lauraine):*
 This pair developed unit test cases for 3 methods in the Range class:
-combine(Range range1, Range range2)
-getLength()
-shift(Range base, double delta)
+- combine(Range range1, Range range2)
+- getLength()
+- shift(Range base, double delta)
 This pair also developed unit test cases for 2 methods in the DataUtilitiesclass:
-calculateColumnTotal(Values2D data, int column)
-equal(double[][] a, double[][] b)
+- calculateColumnTotal(Values2D data, int column)
+- equal(double[][] a, double[][] b)
 
-With this testing strategy, both pairs were able to develop their understanding of both classes and each of their methods while completing the tests in an efficient time. Once both pairs have completed their test cases, we will review and explain our processes as a group. As a strategy for using creating the test cases we used the boundary values which was seen in various of our test cases where would test for if it was near the boundary or not. For example, it would have been redundant to do test cases that were similar to each other for example we can use the variables using values above the upper boundary(AUB). In the boundary values, we examine it using the function values which can be passed as parameters to test these cases of these independent variables. This strategy was similar to the equivalence classes but instead examined the minimum and maximum values. After these steps we were able to create a project in Eclipse with the SUT like a test suite which was showcased in our two test classes. 
+With this testing strategy, both pairs were able to develop their understanding of both classes and each of their methods while completing the tests in an efficient time. Once both pairs have completed their test cases, we will review and explain our processes as a group. As a strategy for using creating the test cases, we used the boundary values which were seen in various of our test cases where would test for if it was near the boundary or not. For example, it would have been redundant to do test cases that were similar to each other for example we can use the variables using values above the upper boundary(AUB). In the boundary values, we examine it using the function values which can be passed as parameters to test these cases of these independent variables. This strategy was similar to the equivalence classes but instead examined the minimum and maximum values. After these steps, we were able to create a project in Eclipse with the SUT like a test suite which was showcased in our two test classes. 
 
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-One of the major difficulties we ran into was that some of the JAR files were missing for example we needed to include Hamcrest-all in order for the mocking objects to work for the DataUtlitiesTest class. Another challenge we faced was being able to have the JFreeChart demo be able to work on the Apple laptops the windows would not always pop out properly hence having us switch to using Windows machines to create the Eclipse project. The complexity of the lab document was also another challenge we faced because some of the things were not as clear for example, on how to run the mocking objects. We also had challenges in overcoming the ability to effectively split the work among ourselves we solved this by dividing in pair reviews where we would have one person code and other review. Mocking objects is creating an implementation of being able to execute tests with premade objects which can mimic a real object. For the mocking we used jMock which was provided to us which is essentialy similar to Mockito in the lectures. jMock allowed us to have this interaction between the a real function and mock object gives the ability to test the method calls not only it’s easier to define the mock objects but it lets keep a continuous flow of the code. It also provides the functionality of creating an object tailored to the feature which is being tested in the unit testing framework. The other benefit is that we are able to make testing more fluid with the help of jMock since they can be independent of each other. This ability of mocking objects enables us to stimulate the behavior of a complicated real object into our unit testing whereas including a real object is imporatical. There does come some problems with mocking because ti does override the logic of a class since the real logic for the object creation is not fully shown when doing unit testing. The mock object may not include all of the methods or parameters it is taking in as a real object would do. The second drawback is that the mock object could even have a different return type from the object in the class since it has different attributes. Not always the behaviour of a mocking object will be identical to the object which is real for example there could be a situation where the mock is not raising an exception which it should be. 
+One of the major difficulties we ran into was that some of the JAR files were missing for example we needed to include Hamcrest-all in order for the mocking objects to work for the DataUtlitiesTest class. Another challenge we faced was being able to have the JFreeChart demo be able to work on the Apple laptops the windows would not always pop out properly hence having us switch to using Windows machines to create the Eclipse project. The complexity of the lab document was also another challenge we faced because some of the things were not as clear for example, on how to run the mocking objects. We also had challenges in overcoming the ability to effectively split the work among ourselves we solved this by dividing into pair reviews where we would have one person code and another review. 
+
+Mocking objects is creating an implementation for being able to execute tests with premade objects to mimic real objects. For the mocking, we used jMock which is essentially similar to Mockito in the lectures. jMock allowed us to have this interaction between the real function and mock object - giving us the ability to test the method calls. With jMock, it is easier to define the mock object and keep a continuous flow of the code. jMock also provides the functionality of creating an object tailored to the function being tested in the unit testing framework. This ability of mocking objects enables us to stimulate the behavior of a complicated real object into our unit testing - whereas including a real object is imporatical. 
+
+There are some problems with mocking as it overrides the logic of a class because the real logic for the object creation is not fully shown when doing unit testing. The mock object may not include all of the methods/parameters a real object is executing. The second drawback is that the mock object could even have a different return type from the object in the class since it has different attributes. The behaviour of a mocking object will not always be identical to the real object. For example, there could be a situation where the mock is not throwing an exception when it should. 
 
 # 6 Comments/feedback on the lab itself
 
 As a group, we found the differences between what was posted on D2L and what was posted on Git to be quite confusing. These differences resulted in major uncertainties and obstacles that prevailed throughout the lab. Specifically, comparing the files on D2L and git, the artifacts folder and lab document were different versions and performed differently when testing. Due to this lack of consistency between platforms, initially half of our group operated on the D2L files and half operated on the git files - resulting in us being very confused when we had different tests fail. For example, on the D2L version, the getUpperBound() function in the Range class failed to return the upper bound value, but in the Git version, getUpperBound() returned the correct value. It was more frustrating to hear that other groups were experiencing the same problems, yet there was no announcement made during the lab or in lectures that we were meant to use the git files explicitly; groups had to contact the professor or TA to know that the D2L version was out of date. 
 
-As mentioned in the above section, after our group switched to working on the Git version, there still were issues with the files from the artifact folder. The mock test were all failing due to hamcrest not being included in our artifacts folder. This issue was resolved AFTER we contacted the TA and Professor to clarify if we are allowed/meant to include external jars such as hamcrest.
+As mentioned in the above section, after our group switched to working on the Git version, there still were issues with the files from the artifact folder. The mock test were all failing due to hamcrest not being included in our artifacts folder. This issue was resolved after we contacted the TA and Professor to clarify if we are allowed/meant to include external jars such as hamcrest.
 
 Overall, this miscommunication caused confusion and resulted in us having to constantly adapt and work around these obstacles.
