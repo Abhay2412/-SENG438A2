@@ -10,7 +10,7 @@
 | Abhay Khosla   |     |
 | Alexis Hamrak  |     |
 
-1. [Introduction](#1-introduction)
+1. [Introduction](#1-introduction) 
 2. [Detailed Description of unit test strategy](#2-detailed-description-of-unit-test-strategy)
 3. [Test cases developed](#3-test-cases-developed)
 4. [How the team work was divided and managed](#4-how-the-team-work-was-divided-and-managed)
