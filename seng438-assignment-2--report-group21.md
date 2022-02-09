@@ -241,7 +241,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 | DataUtilities | equal | 1 | testEqualityOfSecondNullArray() | Pass |
 | DataUtilities | equal | 1 | testEqualityOfTwoNullArrays() | Pass |
 
-Each partition number matches the corresponding number for that function as listed in Section 2. 
+Each partition number matches the corresponding number for that function as listed in Section 2: [Detailed Description of unit test strategy](#2-detailed-description-of-unit-test-strategy)
 
 # 4 How the team work was divided and managed
 As a group, we decided to use pair testing and divided the unit tests among ourselves. All of the work was done remotely using Discord with each group member sharing their screens in the pairs that were previously formed. The methods were also divided to make it easier to complete the lab instead of doing it all in one large group. The work was divided as followed:
