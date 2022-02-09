@@ -183,14 +183,14 @@ We will begin by reviewing the java documentation to understand how both the Dat
 | Range | expandToInlcude |1b, 2a, 3a | expandToInlcudeOutsideUpperRangeLowerNegative() | Pass |
 | Range | expandToInlcude | 1b, 2a, 3a | expandToInlcudeOutsideLowerRangeLowerNegative() | Pass |
 | Range | expandToInlcude |1b, 2a, 3a | expandToInlcudeOutsideLowerRangeUpperNegative() | Pass |
-| Range | combine | 1 | combineFirstParameterNullUpperBound() | Pass |
-| Range | combine | 1 | combineFirstParameterNullLowerBound() | Pass |
-| Range | combine | 2 | combineSecondParameterNullUpperBound() | Pass |
-| Range | combine | 2 | combineSecondParameterNullLowerBound()| Pass |
-| Range | combine | 3 | combineBothParametersNullUpperBound() | Pass |
-| Range | combine | 3 | combineBothParametersNullLowerBound() | Pass |
-| Range | combine | 3 | combineNoParametersNullUpperBound() | Pass |
-| Range | combine | 3 | combineNoParametersNullLowerBound() | Pass |
+| Range | combine | 1a | combineFirstParameterNullUpperBound() | Pass |
+| Range | combine | 1a | combineFirstParameterNullLowerBound() | Pass |
+| Range | combine | 2a | combineSecondParameterNullUpperBound() | Pass |
+| Range | combine | 2a | combineSecondParameterNullLowerBound()| Pass |
+| Range | combine | 3a | combineBothParametersNullUpperBound() | Pass |
+| Range | combine | 3a | combineBothParametersNullLowerBound() | Pass |
+| Range | combine | 1b, 2b, 3b | combineNoParametersNullUpperBound() | Pass |
+| Range | combine | 1b, 2b, 3b | combineNoParametersNullLowerBound() | Pass |
 | Range | getLength | 1 | testGetLengthZero() | Pass |
 | Range | getLength | 1 | testGetLengthLargePositive() | Pass |
 | Range | getLength | 1 | testGetLengthLargeNegative() | Pass |
@@ -234,12 +234,12 @@ We will begin by reviewing the java documentation to understand how both the Dat
 | DataUtilities | calculateColumnTotal | 1b, 2b, 3a, 4b, 5a | calculateColumnTotalNegativeColumnNumber() | Fail |
 | DataUtilities | calculateColumnTotal | 1b, 2b, 3a, 4b, 5b | calculateColumnTotalPositive() | Pass |
 | DataUtilities | calculateColumnTotal | 1b, 2a, 3b, 4b, 5b  | calculateColumnTotalNegative() | Pass |
-| DataUtilities | equal | 2 | testEqualityOfEqualArrays_SameLength() | Pass |
-| DataUtilities | equal | 2 | testEqualityOfUnequalArrays_SameLength() | Pass |
-| DataUtilities | equal | 2 | testEqualityOfArrays_DifferentLength() | Pass |
-| DataUtilities | equal | 1 | testEqualityOfFirstNullArray() | Pass |
-| DataUtilities | equal | 1 | testEqualityOfSecondNullArray() | Pass |
-| DataUtilities | equal | 1 | testEqualityOfTwoNullArrays() | Pass |
+| DataUtilities | equal | 1b, 2a | testEqualityOfEqualArrays_SameLength() | Pass |
+| DataUtilities | equal | 1b, 2b | testEqualityOfUnequalArrays_SameLength() | Pass |
+| DataUtilities | equal | 1b, 2c | testEqualityOfArrays_DifferentLength() | Pass |
+| DataUtilities | equal | 1c | testEqualityOfFirstNullArray() | Pass |
+| DataUtilities | equal | 1d | testEqualityOfSecondNullArray() | Pass |
+| DataUtilities | equal | 1a | testEqualityOfTwoNullArrays() | Pass |
 
 Each partition number matches the corresponding number for that function as listed in Section 2: [Detailed Description of unit test strategy](#2-detailed-description-of-unit-test-strategy)
 
