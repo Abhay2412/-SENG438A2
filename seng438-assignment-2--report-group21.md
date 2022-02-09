@@ -11,7 +11,7 @@
 | Alexis Hamrak  |     |
 
 # 1 Introduction
-In this lab we were tasked with implementing unit testing to two Java classes of a program, in which we were only provided the Java documentation for. To complete this testing, we used JUnit frameworks to create a testing environment composed of mock objects and test cases. The lab was meant to familiarize us with using Eclipse and setting up a project with a set of given JAR files, as well as learn about Eclipse's JUnit functionality. The other focal point of the lab was to read and understand Java documentation and create test cases for the outlined classes. In the creation of these test cases, we were tasked to build partitions for the chosen methods under test. These partitions could then be used to build our test cases and ensure that we are testing each of the methods thoroughly for correctness. 
+In this lab, we were tasked with implementing unit testing to two Java classes of a program, infor which we were only provided the Java documentation for. To complete this testing, we used JUnit frameworks to create a testing environment composed of mock objects and test cases. The lab was meant to familiarize us with using Eclipse and setting up a project with a set of given JAR files, as well as learn about Eclipse's JUnit functionality. The other focal point of the lab was to read and understand Java documentation and create test cases for the outlined classes. In the creation of these test cases, we were tasked to build partitions for the chosen methods under test. These partitions could then be used to build our test cases and ensure that we are testing each of the methods thoroughly for correctness. 
 
 # 2 Detailed description of unit test strategy
 ### Test plan:
@@ -30,7 +30,6 @@ We will begin by reviewing the java documentation to understand how both the Dat
 3. 	**lowerMargin and upperMargin** values
 	-	value is a negative number (Valid)
 	-	value is a positive number (Valid)
-
 
 #### `expandToInclude(Range range, double value)` ####
 1.	A null **range**
@@ -62,6 +61,9 @@ We will begin by reviewing the java documentation to understand how both the Dat
 2. 	**delta** amount
 	-	value is a negative number (Valid)
 	-	value is a positive number (Valid)
+3.	**base** is zero-based
+	-	range is positive (Valid)
+	-	range is not positve (Invalid)
 
 
 #### `getLength()` ####
@@ -118,9 +120,22 @@ We will begin by reviewing the java documentation to understand how both the Dat
 	-	data can have one or multiple elements (Valid)
 
 #### `calculateColumnTotal(Values2D data, int column)` ####
-1. The parameter, data, has a restriction detailing “the table of values (null not permitted)” which creates our first partition.
-2. The parameter, column, was detailed to be “zero-based” meaning that the index value starts at zero (no negative indexes can exist) and thus creates a second partition.
-3. The parameter, data, should be able to contain varying sizes of very large and very small (positive and negative) double values, which creates a third and final partition.
+1.	A null **data** 
+	-	data is null (Invalid)
+	-	data is not null (Valid)
+2. 	Positive or negative values in **data**
+	- 	elements are negative numbers (Valid)
+	- 	elements are positive number (Valid)
+3.	Value in amounts in **data **
+	-	values are small (Valid)
+	- 	values are large (Valid)
+4. 	Number of elements in **data**
+	-	data can be empty (Valid)
+	-	data can have one or multiple elements (Valid)
+5. 	**column** value 
+	-	column is less than zero (Invalid)
+	-	column is equal or greater than zero (Valid)
+
 
 #### `equal(double[][] a, double[][] b)` ####
 1.	Null **a and b**
