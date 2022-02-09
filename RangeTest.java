@@ -191,6 +191,21 @@ public class RangeTest {
 		assertEquals("The upper margin range will be -0.68", -0.68, testExpandRange.getUpperBound(), .000000001d);
 		// assertion that expected value matches the actual value (-0.68)
 	}
+	
+	/**
+	 * This test will simulate expanding the range by -0.29 and -0.35  - asserting that
+	 * the lower margin will be expanded to be -4.84.
+	 */
+	@Test
+	public void expandTestUpperMarginNegativeMargins() {// This is created the see if the range will change or not.
+		// Using the margin value in percentages which will return the upper bound as a
+		// decimal.
+		testRange1 = new Range(-6, -2); // This is creating the range for testing purposes.
+		testExpandRange = Range.expand(testRange1, -0.29 , -0.35);// Using the expand method to pass in the test
+		// range and the margin values
+		assertEquals("The upper margin range will be -4.84", -4.84, testExpandRange.getLowerBound(), .000000001d);
+		// assertion that expected value matches the actual value (-4.84)
+	}
 
 	/* Rachel codes and Abhay Reviews */
 	// ------------- expandToInclude(Range range, double value) Tests -----------
