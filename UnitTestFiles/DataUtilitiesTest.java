@@ -269,7 +269,7 @@ public class DataUtilitiesTest {
 		assertEquals("The row total is adding up to 10", 10, result, .000000001d);
 		// asserting the result adds up to 10 (1 + 2 + 3 + 4 = 10)
 	}
-	
+
 	/**
 	 * This test will simulate creating a Values2D table with negative values. The
 	 * table is passed to calculateRowTotal() with a row number of 1 and expects
@@ -324,9 +324,9 @@ public class DataUtilitiesTest {
 		// asserting the result adds up to 15
 		// (-1) + (-2) + (-3) + (-4) + (-5) = (-15)
 	}
-	
+
 	/* Rachel codes and Abhay Reviews */
-	
+
 	/**
 	 * This test will simulate creating a Values2D table with a negative index.
 	 * Expectation is that an exception should be thrown.
@@ -358,7 +358,7 @@ public class DataUtilitiesTest {
 				// will always returns -2.0 when getValue(1, 1) is called
 			}
 		});
-		
+
 		int rowNumber = -1; // setting rowNumber to have an int value of -1
 		try {
 			DataUtilities.calculateRowTotal(values, rowNumber);
@@ -371,7 +371,7 @@ public class DataUtilitiesTest {
 			// catching the exception, asserting that an IllegalArgumentException was thrown
 		}
 	}
-	
+
 	// ------------- createNumberArray(double[] data) Tests ----------------------
 
 	/**
@@ -534,9 +534,10 @@ public class DataUtilitiesTest {
 	// Code created by Alexis and Lauraine
 	// -----------------------------------------------------------------------------------------
 	/* Lauraine codes and Alexis reviews */
-	
-	// ------------- calculateColumnTotal(Values2D data, int column) Tests ---------------------
-	
+
+	// ------------- calculateColumnTotal(Values2D data, int column) Tests
+	// ---------------------
+
 	/**
 	 * This test will simulate creating an empty Values2D table. The empty table is
 	 * passed to calculateColumnTotal() with a column number of 0 and expects that
@@ -573,7 +574,7 @@ public class DataUtilitiesTest {
 	 * negative number is passed to calculateColumnTotalNegativeColumnNumber() with
 	 * a Values2D table and expects that an IllegalArgumentException is thrown.
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void calculateColumnTotalNegativeColumnNumber() {
 		Mockery mockingContext = new Mockery();
 		final Values2D values = mockingContext.mock(Values2D.class);
@@ -590,9 +591,18 @@ public class DataUtilitiesTest {
 				will(returnValue(10.0));
 			}
 		});
+
 		int columnNumber = -1;
-		double result = DataUtilities.calculateColumnTotal(values, columnNumber);
-		assertEquals("The columnNumber is zero-based (no negatives).", 0.0, result, .000000001d);
+		try {
+			DataUtilities.calculateColumnTotal(values, columnNumber);
+			// calling calculateRowTotal with Values2D = values and at rowNumber -1
+			fail("This method should throw an exception!");
+			// creating a failure message for if an exception is not thrown
+		} catch (Exception e) {
+			assertEquals("The exception thrown type is IllegalArgumentException", IllegalArgumentException.class,
+					e.getClass());
+			// catching the exception, asserting that an IllegalArgumentException was thrown
+		}
 	}
 
 	/**
@@ -651,103 +661,106 @@ public class DataUtilitiesTest {
 		double result = DataUtilities.calculateColumnTotal(values, columnNumber);
 		assertEquals("The row total is adding up to -5615.7", -5615.7, result, .000000001d);
 	}
-	
-	
-	
-	
+
 	/* Alexis codes and Lauraine reviews */
 	// ------------- equal(double[][] a, double[][] b) Tests ---------------------
-	
+
 	/**
-	 * This test will check the equals() function to see if two equal (and same length) double 2D arrays can be passed in as arguments
-	 * and are found to be equal.
+	 * This test will check the equals() function to see if two equal (and same
+	 * length) double 2D arrays can be passed in as arguments and are found to be
+	 * equal.
 	 */
 	@Test
 	public void testEqualityOfEqualArrays_SameLength() {
-		double[][] array1 = {{4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11}, {4.1, -19, 20.44, 4, 17.1234, 10, 8.77, 6, 30, 1}};
-		double[][] equalArray = {{4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11}, {4.1, -19, 20.44, 4, 17.1234, 10, 8.77, 6, 30, 1}};
-		
+		double[][] array1 = { { 4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11 },
+				{ 4.1, -19, 20.44, 4, 17.1234, 10, 8.77, 6, 30, 1 } };
+		double[][] equalArray = { { 4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11 },
+				{ 4.1, -19, 20.44, 4, 17.1234, 10, 8.77, 6, 30, 1 } };
+
 		boolean equality = DataUtilities.equal(array1, equalArray);
-		
+
 		assertEquals("The equality should be true", true, equality);
 	}
-	
+
 	/**
-	 * This test will check the equals() function to see if two different (but same length) double 2D arrays can be passed in as arguments
-	 * and are found not equal.
+	 * This test will check the equals() function to see if two different (but same
+	 * length) double 2D arrays can be passed in as arguments and are found not
+	 * equal.
 	 */
 	@Test
 	public void testEqualityOfUnequalArrays_SameLength() {
-		//set up two equal length unequal valued arrays
-		double[][] array1 = {{4, -19, 20.4, 2.22, 17.2, 10, 8.7, 6.999, 30, 1.21}, {100.22, -66.2, 20.33, 4, 17, 10.01, 8, 17, 9.4, 2039.22}};
-		double[][] array2 = {{1.0, -15, -11, 4.88, -17, 10, 8.66, 6, -78.22, 1}, {4.88, -19.4, 16, 17, -9.44, 10, 10.00, 6.4, 30, 1.6524}};
-		
+		// set up two equal length unequal valued arrays
+		double[][] array1 = { { 4, -19, 20.4, 2.22, 17.2, 10, 8.7, 6.999, 30, 1.21 },
+				{ 100.22, -66.2, 20.33, 4, 17, 10.01, 8, 17, 9.4, 2039.22 } };
+		double[][] array2 = { { 1.0, -15, -11, 4.88, -17, 10, 8.66, 6, -78.22, 1 },
+				{ 4.88, -19.4, 16, 17, -9.44, 10, 10.00, 6.4, 30, 1.6524 } };
+
 		boolean equality = DataUtilities.equal(array1, array2);
-		
+
 		assertEquals("The equality should be false", false, equality);
 	}
-	
+
 	/**
-	 * This test will check the equals() function to see if two different length double 2D arrays can be passed in as arguments
-	 * and are found to be not equal.
+	 * This test will check the equals() function to see if two different length
+	 * double 2D arrays can be passed in as arguments and are found to be not equal.
 	 */
 	@Test
 	public void testEqualityOfArrays_DifferentLength() {
-		//set up 2 arrays of different length
-		double[][] array1 = {{4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11}, {4.1, -19, 20.44, 4, 17.1234, 10, 8.77, 6, 30, 1}};
-		double[][] array2 = {{4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11}, {4.1, -19, 20.44, 4, 17.1234}};
-		
+		// set up 2 arrays of different length
+		double[][] array1 = { { 4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11 },
+				{ 4.1, -19, 20.44, 4, 17.1234, 10, 8.77, 6, 30, 1 } };
+		double[][] array2 = { { 4, -19.23, 20, 4, 17.2233, 10, 8, 6.00, 30, 1.11 }, { 4.1, -19, 20.44, 4, 17.1234 } };
+
 		boolean equality = DataUtilities.equal(array1, array2);
-		
+
 		assertEquals("The equality should be true", false, equality);
 	}
-	
+
 	/**
-	 * This test will check the equals() function to see if a null and double array can be passed in as arguments
-	 * and are found to be not equal.
+	 * This test will check the equals() function to see if a null and double array
+	 * can be passed in as arguments and are found to be not equal.
 	 */
 	@Test
 	public void testEqualityOfFirstNullArray() {
-		//set up first array as null, second with values
+		// set up first array as null, second with values
 		double[][] array1 = null;
-		double[][] array2 = {{55, -1, 0, 23, 777}, {1000, -63, 620}};
-		
-		boolean equality = DataUtilities.equal(array1, array2); //check if arrays are equal
-		
+		double[][] array2 = { { 55, -1, 0, 23, 777 }, { 1000, -63, 620 } };
+
+		boolean equality = DataUtilities.equal(array1, array2); // check if arrays are equal
+
 		assertEquals("The equality should be false", false, equality);
 	}
-	
+
 	/**
-	 * This test will check the equals() function to see if a null and double array can be passed in as arguments
-	 * and are found to be not equal.
+	 * This test will check the equals() function to see if a null and double array
+	 * can be passed in as arguments and are found to be not equal.
 	 */
 	@Test
 	public void testEqualityOfSecondNullArray() {
-		//set up second array as null, first with values
+		// set up second array as null, first with values
 		double[][] array2 = null;
-		double[][] array1 = {{55, -1, 0, 23, 777}, {1000, -63, 620}};
-		
-		boolean equality = DataUtilities.equal(array1, array2); //check if arrays are equal
-		
+		double[][] array1 = { { 55, -1, 0, 23, 777 }, { 1000, -63, 620 } };
+
+		boolean equality = DataUtilities.equal(array1, array2); // check if arrays are equal
+
 		assertEquals("The equality should be false", false, equality);
 	}
-	
+
 	/**
-	 * This test will check the equals() function to see if two null arrays can be passed in as arguments
-	 * and are found to be equal.
+	 * This test will check the equals() function to see if two null arrays can be
+	 * passed in as arguments and are found to be equal.
 	 */
 	@Test
 	public void testEqualityOfTwoNullArrays() {
-		//set up two null arrays
+		// set up two null arrays
 		double[][] array1 = null;
 		double[][] array2 = null;
-		
-		boolean equality = DataUtilities.equal(array1, array2); //check if arrays are equal
-		
+
+		boolean equality = DataUtilities.equal(array1, array2); // check if arrays are equal
+
 		assertEquals("The equality should be true", true, equality);
 	}
-	
-	
+
 	// -----------------------------------------------------------------------------------------
 	// End of code created by Alexis and Lauraine
 	// -----------------------------------------------------------------------------------------
