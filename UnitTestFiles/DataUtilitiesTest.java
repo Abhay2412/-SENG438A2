@@ -324,7 +324,9 @@ public class DataUtilitiesTest {
 		// asserting the result adds up to 15
 		// (-1) + (-2) + (-3) + (-4) + (-5) = (-15)
 	}
-
+	
+	/* Rachel codes and Abhay Reviews */
+	
 	/**
 	 * This test will simulate creating a Values2D table with a negative index.
 	 * Expectation is that an exception should be thrown.
@@ -371,7 +373,6 @@ public class DataUtilitiesTest {
 	}
 	
 	// ------------- createNumberArray(double[] data) Tests ----------------------
-	/* Rachel codes and Abhay Reviews */
 
 	/**
 	 * This test will simulate creating a 1D array of doubles and passing the object
@@ -382,14 +383,14 @@ public class DataUtilitiesTest {
 	@Test
 	public void createNumberArrayPositiveDouble() {
 		Number[] expectedArray = { 1.7, 2.2, 3.4 };
-		// creating the expected 1D array to be used in the assert
-		// creating a 1D array of type double to pass to createNumberArray()
-		// calling the function to test
-		// asserting the resulting Number array created matches the expected array
+		// creating the expected 1D array with positive values to be used in the assert
 		double[] arrayToPass = { 1.7, 2.2, 3.4 };
+		// creating a 1D array of type double to pass to createNumberArray()
 		Number[] actualArray = DataUtilities.createNumberArray(arrayToPass);
+		// calling the function to test
 		assertArrayEquals("The expected array should contain double values of {1.7, 2.2, 3.4}", expectedArray,
 				actualArray);
+		// asserting the resulting Number array created matches the expected array
 	}
 
 	/**
@@ -401,14 +402,14 @@ public class DataUtilitiesTest {
 	@Test
 	public void createNumberArrayNegativeDouble() {
 		Number[] expectedArray = { -1.7, -2.2, -3.4 };
-		// creating the expected 1D array to be used in the assert
-		// creating a 1D array of type double to pass to createNumberArray()
-		// calling the function to test
-		// asserting the resulting Number array created matches the expected array
+		// creating the expected 1D array with negative values to be used in the assert
 		double[] arrayToPass = { -1.7, -2.2, -3.4 };
+		// creating a 1D array of type double to pass to createNumberArray()
 		Number[] actualArray = DataUtilities.createNumberArray(arrayToPass);
+		// calling the function to test
 		assertArrayEquals("The expected array should contain double values of {-1.7, -2.2, -3.4}", expectedArray,
 				actualArray);
+		// asserting the resulting Number array created matches the expected array
 	}
 
 	/**
