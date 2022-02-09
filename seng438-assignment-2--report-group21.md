@@ -26,6 +26,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 2. 	**range** margins
 	- 	range has negative margins (Valid)
 	- 	range has positive margins (Valid)
+	- 	range has zero as it’s value (Invalid)
 3. 	**lowerMargin and upperMargin** values
 	-	value is a negative number (Valid)
 	-	value is a positive number (Valid)
