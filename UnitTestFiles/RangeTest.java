@@ -552,7 +552,7 @@ public class RangeTest {
 	 * numbers
 	 */
 	@Test
-	public void testGetLengthRangeIsDouble() {
+	public void testGetLengthRangeIsDecimal() {
 		Range tempRange = new Range(-200.03, 200.50); // create a new Range object
 		double length = tempRange.getLength(); // calculate the length of the range
 		assertEquals("The length should be 400.53 and it is " + length, 400.53, length, .000000001d);
@@ -563,7 +563,7 @@ public class RangeTest {
 	 * This test will be used to test the length of a range composed of integers
 	 */
 	@Test
-	public void testGetLengthRangeIsInt() {
+	public void testGetLengthRangeIsNonDecimal() {
 		Range tempRange = new Range(-30, 35); // create a new Range object
 		double length = tempRange.getLength(); // calculate the length of the range
 		assertEquals("The length should be 65 and it is " + length, 65, length, .000000001d);
@@ -575,7 +575,7 @@ public class RangeTest {
 	 * an integer
 	 */
 	@Test
-	public void testGetLengthRangeDoubleAndInt() {
+	public void testGetLengthRangeMixedDecimal() {
 		Range tempRange = new Range(-200.03, 200); // create a new Range object
 		double length = tempRange.getLength(); // calculate the length of the range
 		assertEquals("The length should be 400.03 and it is " + length, 400.03, length, .000000001d);
