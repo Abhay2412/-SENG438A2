@@ -187,13 +187,13 @@ We will begin by reviewing the java documentation to understand how both the Dat
 ### DataUtilities
 |  Class Name | Method | Partition # Related | Test Case Name | Pass/Fail | 
 | ----------------- | ---------  | ------------------------  | ----------------------  | ------------ | 
-| DataUtilities | createNumberArray2D | 1,2  | createNumberRegular2DArrayOfFive() | Pass | 
-| DataUtilities | createNumberArray2D | 1,2 | createNumberRegular2DArrayOfOne() | Pass |
-| DataUtilities | createNumberArray2D | 1,2 | createNumberRegular2DArrayOfNegativeValues() | Pass |
-| DataUtilities | createNumberArray2D | 1,2 | createNumberRegular2DArrayOfHugeValues() | Pass |
-| DataUtilities | createNumberArray2D | 4 | createNumber2DNullArray() | Pass |
-| DataUtilities | createNumberArray2D | 3 | createNumber2DEmptyArrayOne() | Pass | 
-| DataUtilities | createNumberArray2D | 3  | createNumber2DEmptyArrayEmpty() | Pass | 
+| DataUtilities | createNumberArray2D | 2b, 3a, 4b  | createNumberRegular2DArrayOfFive() | Pass | 
+| DataUtilities | createNumberArray2D | 2b, 3a, 4b | createNumberRegular2DArrayOfOne() | Pass |
+| DataUtilities | createNumberArray2D | 2a, 3a, 4b | createNumberRegular2DArrayOfNegativeValues() | Pass |
+| DataUtilities | createNumberArray2D | 2b, 3b, 4b | createNumberRegular2DArrayOfHugeValues() | Pass |
+| DataUtilities | createNumberArray2D | 1a  | createNumber2DNullArray() | Pass |
+| DataUtilities | createNumberArray2D | 2b, 3a, 4a | createNumber2DEmptyArrayOne() | Pass | 
+| DataUtilities | createNumberArray2D | 4a  | createNumber2DEmptyArrayEmpty() | Pass | 
 | DataUtilities | calculateRowTotal | 4a, 5b | calculateRowTotalEmptyChart() | Pass |
 | DataUtilities | calculateRowTotal | 1a | calculateRowTotalNull() | Pass |
 | DataUtilities | calculateRowTotal | 1b, 2b, 3ab, 4b, 5b | calculateRowTotalPositive() | Pass |
