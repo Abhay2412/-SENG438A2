@@ -136,15 +136,16 @@ We will begin by reviewing the java documentation to understand how both the Dat
 ### Range Class
 |  Class Name | Method | Partition # Related | Test Case Name | Pass/Fail | 
 | ----------------- | ---------  | ------------------------  | ----------------------  | ------------ | 
-| Range | expand | 1 | expandNull() | Pass |
-| Range | expand | 2, 3 | expandTestLowerMarginInt() | Pass |
-| Range | expand | 2, 3 | expandTestUpperMarginInt() | Pass |
-| Range | expand | 3  | expandTestUpperMarginOverOne() | Pass |
-| Range | expand | 3  | expandTestUpperMarginLessOne() | Pass |
-| Range | expand |  2, 3 | expandTestLowerMarginDecimal() | Pass |
-| Range | expand |  2, 3 | expandTestUpperMarginDecimal() | Pass |
-| Range | expand | 3  | expandTestWithZero() | Pass |
-| Range | expand |  3 | expandTestUpperMarginNegativeRange() | Pass |
+| Range | expand | 1a | expandNull() | Pass |
+| Range | expand | 2b, 3b | expandTestLowerMarginInt() | Pass |
+| Range | expand | 2a, 3b | expandTestUpperMarginInt() | Pass |
+| Range | expand | 2a, 3b  | expandTestUpperMarginOverOne() | Pass |
+| Range | expand | 2a,3b  | expandTestUpperMarginLessOne() | Pass |
+| Range | expand |  2b, 3b | expandTestLowerMarginDecimal() | Pass |
+| Range | expand |  2b, 3b | expandTestUpperMarginDecimal() | Pass |
+| Range | expand | 2c  | expandTestWithZero() | Pass |
+| Range | expand |  2a, 3b | expandTestUpperMarginNegativeRange() | Pass |
+| Range | expand |  2a, 3a | expandTestUpperMarginNegativeMargins() | Pass |
 | Range | expandToInlcude | 1a | expandToIncludeNullLower() | Pass |
 | Range | expandToInlcude | 1a | expandToIncludeNullUpper() | Pass |
 | Range | expandToInlcude | 1b, 2b, 3b | expandToInlcudeInsideRangeUpper() | Pass |
@@ -173,14 +174,14 @@ We will begin by reviewing the java documentation to understand how both the Dat
 | Range | getLength | 1 | testGetLengthRangeIsDouble() | Pass |
 | Range | getLength | 1 | testGetLengthRangeIsInt() | Pass |
 | Range | getLength | 1 | testGetLengthRangeDoubleAndInt() | Pass |
-| Range | shift | 1 | shiftNullUpperBound() | Pass |
-| Range | shift | 1 | shiftNullLowerBound() | Pass |
-| Range | shift | 2 | shiftByPositiveDoubleUpperBound() | Pass |
-| Range | shift | 2 | shiftByPositiveDoubleLowerBound() | Pass |
-| Range | shift | 2 | shiftByNegativeDoubleUpperBound() | Pass |
-| Range | shift | 2 | shiftByNegativeDoubleLowerBound() | Pass |
-| Range | shift | 3 | shiftByNegativeDoubleToGetNegativeValueUpperBound() | Fail |
-| Range | shift | 3 | shiftByNegativeDoubleToGetNegativeValueLowerBound() | Fail |
+| Range | shift | 1a, 2b | shiftNullUpperBound() | Pass |
+| Range | shift | 1a, 2b | shiftNullLowerBound() | Pass |
+| Range | shift | 2b | shiftByPositiveDoubleUpperBound() | Pass |
+| Range | shift | 2b | shiftByPositiveDoubleLowerBound() | Pass |
+| Range | shift | 2a | shiftByNegativeDoubleUpperBound() | Pass |
+| Range | shift | 2a | shiftByNegativeDoubleLowerBound() | Pass |
+| Range | shift | 2a, 3b | shiftByNegativeDoubleToGetNegativeValueUpperBound() | Fail |
+| Range | shift | 2a, 3b | shiftByNegativeDoubleToGetNegativeValueLowerBound() | Fail |
 
 ### DataUtilities
 |  Class Name | Method | Partition # Related | Test Case Name | Pass/Fail | 
@@ -197,19 +198,19 @@ We will begin by reviewing the java documentation to understand how both the Dat
 | DataUtilities | calculateRowTotal | 1b, 2b, 3ab, 4b, 5b | calculateRowTotalPositive() | Pass |
 | DataUtilities | calculateRowTotal | 1b, 2a, 3ab, 4b, 5b | calculateRowTotalNegative() | Pass |
 | DataUtilities | calculateRowTotal | 1b, 2ab, 3a, 4b, 5a | calculateRowTotalNegativeIndex() | Fail |
-| DataUtilities | createNumberArray |1b, 2b, 3a, 4b  | createNumberArrayPositiveDouble() | Pass |
+| DataUtilities | createNumberArray | 1b, 2b, 3a, 4b  | createNumberArrayPositiveDouble() | Pass |
 | DataUtilities | createNumberArray | 1b, 2a, 3a, 4b | createNumberArrayNegativeDouble() | Pass |
-| DataUtilities | createNumberArray | 1a| createNumberArrayNull() | Pass |
+| DataUtilities | createNumberArray | 1a | createNumberArrayNull() | Pass |
 | DataUtilities | createNumberArray | 1b, 3a, 4b | createNumberArrayZero() | Pass |
-| DataUtilities | createNumberArray |1b, 4a | createNumberArrayEmpty() | Pass |
+| DataUtilities | createNumberArray | 1b, 4a | createNumberArrayEmpty() | Pass |
 | DataUtilities | createNumberArray | 1b, 2ab, 3a, 4b | createNumberArrayNegativePositive() | Pass |
-| DataUtilities | createNumberArray | 1b, 2b, 3b, 4b| createNumberArrayMaxDoubleFour() | Pass |
-| DataUtilities | createNumberArray | 1b, 2b, 3a, 4b| createNumberArrayMinDoubleFour() | Pass |
-| DataUtilities | calculateColumnTotal | 3 | calculateColumnTotalEmptyChart() | Pass | 
-| DataUtilities | calculateColumnTotal | 1 | calculateColumnTotalNull() | Pass |
-| DataUtilities | calculateColumnTotal | 2 | calculateColumnTotalNegativeColumnNumber() | Fail |
-| DataUtilities | calculateColumnTotal | 3 | calculateColumnTotalPositive() | Pass |
-| DataUtilities | calculateColumnTotal | 3 | calculateColumnTotalNegative() | Pass | 
+| DataUtilities | createNumberArray | 1b, 2b, 3b, 4b | createNumberArrayMaxDoubleFour() | Pass |
+| DataUtilities | createNumberArray | 1b, 2b, 3a, 4b | createNumberArrayMinDoubleFour() | Pass |
+| DataUtilities | calculateColumnTotal | 1b, 4a, 5b | calculateColumnTotalEmptyChart() | Pass | 
+| DataUtilities | calculateColumnTotal | 1a, 5b | calculateColumnTotalNull() | Pass |
+| DataUtilities | calculateColumnTotal | 1b, 2b, 3a, 4b, 5a | calculateColumnTotalNegativeColumnNumber() | Fail |
+| DataUtilities | calculateColumnTotal | 1b, 2b, 3a, 4b, 5b | calculateColumnTotalPositive() | Pass |
+| DataUtilities | calculateColumnTotal | 1b, 2a, 3b, 4b, 5b  | calculateColumnTotalNegative() | Pass |
 | DataUtilities | equal | 2 | testEqualityOfEqualArrays_SameLength() | Pass |
 | DataUtilities | equal | 2 | testEqualityOfUnequalArrays_SameLength() | Pass |
 | DataUtilities | equal | 2 | testEqualityOfArrays_DifferentLength() | Pass |
