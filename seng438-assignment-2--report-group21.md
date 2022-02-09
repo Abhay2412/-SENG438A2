@@ -13,7 +13,7 @@
 1. [Introduction](#1-introduction)
 2. [Detailed Description of unit test strategy](#2-detailed-description-of-unit-test-strategy)
 3. [Test cases developed](#3-test-cases-developed)
-4. [How the team work/effor was divided and managed](#4-how-the-team-work/effort-was-divided-and-managed)
+4. [How the team work/effor was divided and managed](#4-how-the-team-work-was-divided-and-managed)
 5. [Difficulties encountered, challenges overcome, and lessons learned](#5-difficulties-encountered-challenges-overcome-and-lessons-learned)
 6. [Comments/feedback on the lab itself](#6-commentsfeedback-on-the-lab-itself)
 
@@ -243,7 +243,7 @@ We will begin by reviewing the java documentation to understand how both the Dat
 
 Each partition number matches the corresponding number for that function as listed in Section 2. 
 
-# 4 How the teamwork/effort was divided and managed
+# 4 How the team work was divided and managed
 As a group, we decided to use pair testing and divided the unit tests among ourselves. All of the work was done remotely using Discord with each group member sharing their screens in the pairs that were previously formed. The methods were also divided to make it easier to complete the lab instead of doing it all in one large group. The work was divided as followed:
 
 #### `Pair #1 (Rachel/Abhay): ` ####
