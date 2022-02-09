@@ -10,6 +10,13 @@
 | Abhay Khosla   |     |
 | Alexis Hamrak  |     |
 
+1. [Introduction](#1-introduction)
+2. [Detailed Description of unit test strategy](#2-detailed-description-of-unit-test-strategy)
+3. [Test cases developed](#3-test-cases-developed)
+4. [How the team work/effor was divided and managed](#4-how-the-team-workeffort-was-divided-and-managed)
+5. [Difficulties encountered, challenges overcome, and lessons learned](#5-difficulties-encountered-challenges-overcome-and-lessons-learned)
+6. [Comments/feedback on the lab itself](#6-commentsfeedback-on-the-lab-itself)
+
 # 1 Introduction
 In this lab, we were tasked with implementing unit testing to two Java classes of a program, infor which we were only provided the Java documentation for. To complete this testing, we used JUnit frameworks to create a testing environment composed of mock objects and test cases. The lab was meant to familiarize us with using Eclipse and setting up a project with a set of given JAR files, as well as learn about Eclipse's JUnit functionality. The other focal point of the lab was to read and understand Java documentation and create test cases for the outlined classes. In the creation of these test cases, we were tasked to build partitions for the chosen methods under test. These partitions could then be used to build our test cases and ensure that we are testing each of the methods thoroughly for correctness. 
 
