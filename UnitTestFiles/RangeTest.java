@@ -548,7 +548,7 @@ public class RangeTest {
 	}
 
 	/**
-	 * This test will be used to test the length of a range composed of two double
+	 * This test will be used to test the length of a range composed of two decimal
 	 * numbers
 	 */
 	@Test
@@ -560,7 +560,7 @@ public class RangeTest {
 	}
 
 	/**
-	 * This test will be used to test the length of a range composed of integers
+	 * This test will be used to test the length of a range composed of no decimals
 	 */
 	@Test
 	public void testGetLengthRangeIsNonDecimal() {
@@ -571,7 +571,7 @@ public class RangeTest {
 	}
 
 	/**
-	 * This test will be used to test the length of a range composed of a double and
+	 * This test will be used to test the length of a range composed of a decimal and
 	 * an integer
 	 */
 	@Test
