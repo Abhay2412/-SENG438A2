@@ -13,7 +13,7 @@
 1. [Introduction](#1-introduction)
 2. [Detailed Description of unit test strategy](#2-detailed-description-of-unit-test-strategy)
 3. [Test cases developed](#3-test-cases-developed)
-4. [How the team work/effor was divided and managed](#4-how-the-team-workeffort-was-divided-and-managed)
+4. [How the team work/effor was divided and managed](#4-how-the-team-work/effort-was-divided-and-managed)
 5. [Difficulties encountered, challenges overcome, and lessons learned](#5-difficulties-encountered-challenges-overcome-and-lessons-learned)
 6. [Comments/feedback on the lab itself](#6-commentsfeedback-on-the-lab-itself)
 
