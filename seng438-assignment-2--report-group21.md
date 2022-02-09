@@ -194,9 +194,9 @@ We will begin by reviewing the java documentation to understand how both the Dat
 | Range | getLength | 1 | testGetLengthZero() | Pass |
 | Range | getLength | 1 | testGetLengthLargePositive() | Pass |
 | Range | getLength | 1 | testGetLengthLargeNegative() | Pass |
-| Range | getLength | 1 | testGetLengthRangeIsDouble() | Pass |
-| Range | getLength | 1 | testGetLengthRangeIsInt() | Pass |
-| Range | getLength | 1 | testGetLengthRangeDoubleAndInt() | Pass |
+| Range | getLength | 1 | testGetLengthRangeIsDecimal() | Pass |
+| Range | getLength | 1 | testGetLengthRangeIsNonDecimal() | Pass |
+| Range | getLength | 1 | testGetLengthRangeMixedDecimal() | Pass |
 | Range | shift | 1a, 2b | shiftNullUpperBound() | Pass |
 | Range | shift | 1a, 2b | shiftNullLowerBound() | Pass |
 | Range | shift | 2b | shiftByPositiveDoubleUpperBound() | Pass |
