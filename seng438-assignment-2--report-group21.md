@@ -4,11 +4,10 @@
 
 | Group \#:      |  21   |
 | -------------- | --- |
-| Student Names: |     |
-| |  Rachel Renegado   |
-| |    Lauraine Baffot |
-|    |   Abhay Khosla  |
-|   |   Alexis Hamrak  |
+| Student Names: | Lauraine Baffot    |
+| |  Alexis Hamrak  |
+| |    Abhay Khosla |
+|    |    Rachel Renegado  |
 
 1. [Introduction](#1-introduction) 
 2. [Detailed Description of unit test strategy](#2-detailed-description-of-unit-test-strategy)
