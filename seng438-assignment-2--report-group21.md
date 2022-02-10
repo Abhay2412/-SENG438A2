@@ -2,13 +2,13 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#:      |     |
+| Group \#:      |  21   |
 | -------------- | --- |
 | Student Names: |     |
-| Rachel Renegado|     |
-| Lauraine Baffot|     |
-| Abhay Khosla   |     |
-| Alexis Hamrak  |     |
+| |  Rachel Renegado   |
+| |    Lauraine Baffot |
+|    |   Abhay Khosla  |
+|   |   Alexis Hamrak  |
 
 1. [Introduction](#1-introduction) 
 2. [Detailed Description of unit test strategy](#2-detailed-description-of-unit-test-strategy)
